@@ -16,6 +16,20 @@ add_image_size('index_projects_thumbnail', 293, 322, true);
 register_nav_menu('main', 'Navigation principale du site web (en-tête)');
 register_nav_menu('social-media', 'Liens vers les réseaux sociaux');
 
+function remove_menu_items() {
+    global $menu;
+    $restricted = array(__('Posts'), __('Comments'), __('Media'),
+        __('Plugins'));
+    end ($menu);
+    while (prev($menu)){
+        $value = explode(' ',$menu[key($menu)][0]);
+
+        if (in_array($value[0] != NULL?$value[0]:"" , $restricted)){
+            unset($menu[key($menu)]);}
+    }
+}
+add_action('admin_menu', 'remove_menu_items');
+
 function clinicoeurs_get_menu(string $location, ?array $attributes = []): array
 {
     $locations = get_nav_menu_locations();
@@ -38,28 +52,65 @@ function clinicoeurs_get_menu(string $location, ?array $attributes = []): array
     return $links;
 }
 
-register_post_type('project', [
-        'label' => 'Projets',
-        'description' => 'Mes projets',
+function clinicoeurs_register_custom_post_types()
+{
+    register_post_type('actualité', [
+        'label' => 'Actualites',
+        'description' => 'Nos actualités',
+        'public' => true,
+        'menu_position' => 15,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
+    ]);
+
+    register_post_type('avis', [
+        'label' => 'Avis',
+        'description' => 'Avis',
+        'public' => true,
+        'menu_position' => 15,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
+    ]);
+
+    register_post_type('soutien', [
+        'label' => 'Nous soutenir',
+        'description' => 'Différentes façons de nous soutenir',
+        'public' => true,
+        'menu_position' => 10,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
+    ]);
+
+    register_post_type('equipe', [
+        'label' => 'Equipe',
+        'description' => 'Notre équipe',
+        'public' => true,
+        'menu_position' => 10,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
+    ]);
+
+    register_post_type('services', [
+        'label' => 'Services',
+        'description' => 'Nos services',
         'public' => true,
         'menu_position' => 5,
-        'hierarchical' => true,
-        'menu_icon' => 'dashicons-art', // https://developer.wordpress.org/resource/dashicons/#pets,
-        'supports' => ['title','thumbnail', 'page-attributes'],
-]);
-
-function clinicoeurs_get_projets($count = 20){
-    //1. on instancie l'objet WP_Query
-    $projects = new WP_Query([
-        //arguments
-        'post_type' => 'project',
-        'orderby' =>'date',
-        'order'=>'ASC',
-        'posts_per_page' => $count,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
     ]);
-    //2. on retourne l'objet WP_Query
-    return $projects;
+
+    register_post_type('partenaire', [
+        'label' => 'Partenaires',
+        'description' => 'Nos partenaires',
+        'public' => true,
+        'menu_position' => 15,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
+    ]);
+
 }
+
+add_action('init', 'clinicoeurs_register_custom_post_types');
 
 function clinicoeurs_execute_contact_form()
 {
