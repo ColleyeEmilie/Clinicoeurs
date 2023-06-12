@@ -16,6 +16,21 @@ add_image_size('index_projects_thumbnail', 293, 322, true);
 register_nav_menu('main', 'Navigation principale du site web (en-tête)');
 register_nav_menu('social-media', 'Liens vers les réseaux sociaux');
 
+function clinicoeurs_register_custom_taxonomies()
+{
+    register_taxonomy('type', ['actualite'], [
+        'labels' => [
+            'name' => 'Type',
+            'singular_name' => 'Type',
+        ],
+        'description' => 'Catégorisation des types d actualites.',
+        'public' => true,
+        'hierarchical' => true,
+    ]);
+}
+
+add_action('init', 'clinicoeurs_register_custom_taxonomies');
+
 function remove_menu_items() {
     global $menu;
     $restricted = array(__('Posts'), __('Comments'), __('Media'),
