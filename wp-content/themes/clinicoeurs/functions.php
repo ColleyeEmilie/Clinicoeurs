@@ -54,7 +54,7 @@ function clinicoeurs_get_menu(string $location, ?array $attributes = []): array
 
 function clinicoeurs_register_custom_post_types()
 {
-    register_post_type('actualité', [
+    register_post_type('actualite', [
         'label' => 'Actualites',
         'description' => 'Nos actualités',
         'public' => true,
