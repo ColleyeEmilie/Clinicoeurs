@@ -34,7 +34,6 @@
             <?php endforeach; ?>
          </ul>
          <div class="tri__wrapper">
-
              <?php $actualite = new WP_Query([
                  'post_type' => 'actualite',
                  'posts_per_page' => 100
