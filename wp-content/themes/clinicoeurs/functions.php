@@ -77,6 +77,14 @@ function clinicoeurs_register_custom_post_types()
         'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
+    register_post_type('benevolat', [
+        'label' => 'Profils recherchés ',
+        'description' => 'Les profils recherchés dans le cadre du bénévolat',
+        'public' => true,
+        'menu_position' => 15,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
+    ]);
 
     register_post_type('avis', [
         'label' => 'Avis',
