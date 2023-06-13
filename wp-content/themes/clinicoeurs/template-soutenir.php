@@ -37,7 +37,7 @@
     <section class="soutiens__contact contact">
         <h3 class="hidden">Contactez-nous</h3>
         <p class="contact__text"><?= get_field('soutiens_contact');?></p>
-        <a href="<?= get_field('soutiens_link');?>" class="contact__link">Contacte-nous !</a>
+        <a href="<?= get_field('soutiens_link');?>" class="contact__link">Contactez-nous !</a>
     </section>
 </main>
 <?php endwhile; endif; ?>

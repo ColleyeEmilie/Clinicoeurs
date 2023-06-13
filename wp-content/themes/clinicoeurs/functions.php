@@ -27,6 +27,37 @@ function clinicoeurs_register_custom_taxonomies()
         'public' => true,
         'hierarchical' => true,
     ]);
+
+    register_taxonomy('partenariat', ['partenaire'], [
+        'labels' => [
+            'name' => 'Type',
+            'singular_name' => 'Type',
+        ],
+        'description' => 'Catégorisation des types de partenaires',
+        'public' => true,
+        'hierarchical' => true,
+    ]);
+
+    register_taxonomy('section', ['equipe'], [
+        'labels' => [
+            'name' => 'Section',
+            'singular_name' => 'section',
+        ],
+        'description' => 'Catégorisation par section des membres de notre équipe',
+        'public' => true,
+        'hierarchical' => true,
+    ]);
+
+    register_taxonomy('produit', ['produits'], [
+        'labels' => [
+            'name' => 'Produit',
+            'singular_name' => 'produit',
+        ],
+        'description' => 'Catégorisation par section des membres de notre équipe',
+        'public' => true,
+        'hierarchical' => true,
+    ]);
+
 }
 
 add_action('init', 'clinicoeurs_register_custom_taxonomies');
@@ -80,6 +111,14 @@ function clinicoeurs_register_custom_post_types()
     register_post_type('benevolat', [
         'label' => 'Profils recherchés ',
         'description' => 'Les profils recherchés dans le cadre du bénévolat',
+        'public' => true,
+        'menu_position' => 15,
+        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'supports' => ['title','thumbnail'],
+    ]);
+    register_post_type('produits', [
+        'label' => 'Nos produits',
+        'description' => 'Les différents produits que nous vendons',
         'public' => true,
         'menu_position' => 15,
         'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,

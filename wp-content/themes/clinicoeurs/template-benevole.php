@@ -3,6 +3,8 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <main class="benevolat">
     <h2 class="hidden">Bénévolat</h2>
+    <?php $types = get_terms(['taxonomy' => 'type']); ?>
+
     <section class="benevolat__hero hero">
         <div class="hero__desc--1">
             <div class="hero__content">
