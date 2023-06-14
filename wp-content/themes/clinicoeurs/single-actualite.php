@@ -30,7 +30,7 @@
                         <article class="like__content content">
                             <h4 class="content__title"><?= get_the_title()?></h4>
                             <figure class="content__fig">
-                                <img src="<?= get_field('article_image')?>" alt="" class="content__img">
+                                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'latest__img']); ?>
                             </figure>
                         </article>
                     </a>

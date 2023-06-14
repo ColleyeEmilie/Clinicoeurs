@@ -20,7 +20,7 @@
         <div class="partenaires__content">
             <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
             <figure class="partenaires__fig">
-                <img src="<?= get_field('partenaire_logo')?>" alt="" class="partenaires__img">
+                <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
             </figure>
             <p class="partenaires_name"><?= get_field('partenaire_name')?></p>
         </div>
@@ -42,7 +42,7 @@
                 <div class="collaborateurs__content">
                     <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
                     <figure class="collaborateurs__fig">
-                        <img src="<?= get_field('partenaire_logo')?>" alt="" class="collaborateurs__img">
+                        <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
                     </figure>
                     <p class="collaborateurs_name"><?= get_field('partenaire_name')?></p>
                 </div>
@@ -64,7 +64,7 @@
                 <div class="sponsors__content">
                     <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
                     <figure class="sponsors__fig">
-                        <img src="<?= get_field('partenaire_logo')?>" alt="" class="sponsors__img">
+                        <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
                     </figure>
                     <p class="sponsors_name"><?= get_field('partenaire_name')?></p>
                 </div>

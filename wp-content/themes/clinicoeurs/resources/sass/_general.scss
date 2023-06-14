@@ -1,0 +1,29 @@
+body{
+  font-family: "roboto", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: $color_font;
+  background-color: white;
+  overflow-x: hidden;
+}
+a:visited, a:hover, a:active, a   {
+  color: $color_font;
+}
+a:hover, a:active  {
+  font-weight: bolder;
+  transition: .3s;
+}
+a{
+  text-decoration: none;
+}
+.title, h2, h3{
+  font-family: "p22-mackinac-pro", serif;
+}
+.hidden{
+  position: absolute;
+  opacity: 0;
+  left: 9999px;
+}
+.bold{
+  font-weight: bold;
+}

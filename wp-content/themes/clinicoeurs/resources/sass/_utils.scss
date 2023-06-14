@@ -1,7 +1,10 @@
-$color_lightGreen: #CBDED3;
-$color_fontDark: #2F3C45;
-$color_darkGreen: #386355;
-$color_lightFont: rgba(47, 60, 69, 0.7);
+$color_yellow: rgba(229, 178, 78, 1);
+$color_green: rgba(98, 185, 133, 1);
+$color_blue: rgba(104, 142, 199, 1);
+$color_violet: rgba(181, 105, 208, 1);
+$color_backgroundBlue: rgba(240, 247, 255, 1);
+$color_font: rgba(22, 53, 66, 1);
+
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
   @return #{calc($pixels/$context)}em;

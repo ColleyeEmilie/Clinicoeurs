@@ -11,12 +11,12 @@
         ]);
         if($actualite->have_posts()): while($actualite->have_posts()): $actualite->the_post();?>
             <a href="<?= get_the_permalink();?>" class="latest__link">
-            <article class="latest__content content">
-                <h4 class="content__title"><?= get_the_title()?></h4>
-                    <figure class="content__fig">
-                        <img src="<?= get_field('article_image')?>" alt="" class="content__img">
+                <article class="latest__content ">
+                    <h4 class="latest__title"><?= get_the_title()?></h4>
+                    <figure class="latest__fig">
+                        <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'latest__img']); ?>
                     </figure>
-            </article>
+                </article>
             </a>
         <?php endwhile; else: ?>
             <p class="actualite__empty">Il n'y a aucune actualité pour le moment.  </p>
