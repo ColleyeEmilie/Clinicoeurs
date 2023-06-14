@@ -3,14 +3,14 @@
 <main class="index">
     <h2 class="hidden">Bienvenue sur le site des clinicoeurs de Vielsalm</h2>
     <section class="index__hero hero">
-        <div class="hero__content">
-            <div class="hero__regroup">
-                <h3 class="hero__title title">Apportez un peu de <span class="bold">légèreté</span> et de <span>joie</span> dans votre quotidien !</h3>
+        <div class="hero__content flex">
+            <div class="hero__regroup flex">
+                <h3 class="hero__title title">Apportez un peu de <span class="bold">légèreté</span> et de <span class="bold">joie</span> dans votre quotidien !</h3>
                 <p class="hero__description"><?= get_field('accueil_description')?></p>
-                <a href=""><span>Notre mission</span></a>
+                <a href=""><span class="bold hero__mission">Notre mission</span></a>
             </div>
             <figure class="hero__fig">
-                <img class="hero__img"src="http://clinicoeurs.localhost/wp-content/uploads/600_clinicoeurs.png" srcset="http://clinicoeurs.localhost/wp-content/uploads/clinicoeurs.png 200w, http://clinicoeurs.localhost/wp-content/uploads/600_clinicoeurs.png 600w" sizes="(max-width:350px) 300px, (max-width:1200px) 600px" alt="Image d'un clown">
+                <img class="hero__img"src="http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png" srcset="http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png 200w, http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png 600w" sizes="(max-width:350px) 300px, (max-width:1200px) 600px" alt="Image d'un clown">
             </figure>
         </div>
     </section>

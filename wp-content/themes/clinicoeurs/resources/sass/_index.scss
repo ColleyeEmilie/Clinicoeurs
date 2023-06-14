@@ -1,0 +1,34 @@
+.index{
+  &__hero{
+    background-color: $color_backgroundBlue;
+    padding-top: 100px;
+    padding-bottom: 70px;
+    .hero{
+      &__content{
+        justify-content: space-around;
+      }
+      &__mission::before{
+        background-color: white;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: inline-block;
+        content:'';
+      }
+      &__description{
+        margin-bottom: em(50);
+      }
+      &__title{
+        font-size: em(42);
+        line-height: 1.4em;
+        margin-bottom: .6em;
+      }
+      &__regroup{
+        max-width: 500px;
+        align-self: center;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
+  }
+}
