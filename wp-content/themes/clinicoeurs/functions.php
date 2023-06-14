@@ -10,7 +10,7 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Activer les images "thumbnail" sur nos posts
 add_theme_support('post-thumbnails');
-add_image_size('index_projects_thumbnail', 293, 322, true);
+add_image_size('products_thumbnail', 300, 300, true);
 
 // Register existing navigation menus
 register_nav_menu('main', 'Navigation principale du site web (en-tête)');
@@ -47,25 +47,14 @@ function clinicoeurs_register_custom_taxonomies()
         'public' => true,
         'hierarchical' => true,
     ]);
-
-    register_taxonomy('produit', ['produits'], [
-        'labels' => [
-            'name' => 'Produit',
-            'singular_name' => 'produit',
-        ],
-        'description' => 'Catégorisation par section des membres de notre équipe',
-        'public' => true,
-        'hierarchical' => true,
-    ]);
-
 }
 
 add_action('init', 'clinicoeurs_register_custom_taxonomies');
 
 function remove_menu_items() {
     global $menu;
-    $restricted = array(__('Posts'), __('Comments'), __('Media'),
-        __('Plugins'));
+    $restricted = array(__('Posts'), __('Comments'),
+        );
     end ($menu);
     while (prev($menu)){
         $value = explode(' ',$menu[key($menu)][0]);
@@ -116,9 +105,9 @@ function clinicoeurs_register_custom_post_types()
         'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
-    register_post_type('produits', [
-        'label' => 'Nos produits',
-        'description' => 'Les différents produits que nous vendons',
+    register_post_type('produit', [
+        'label' => 'Nos catégories de produits',
+        'description' => 'Les différentes catégories de produits que nous vendons',
         'public' => true,
         'menu_position' => 15,
         'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
@@ -204,9 +193,8 @@ function clinicoeurs_execute_contact_form()
         )
         ->feedback();
 }
-
-add_action('admin_post_nopriv_dwp_contact_form', 'clinicoeurs_execute_contact_form');
-add_action('admin_post_dwp_contact_form', 'clinicoeurs_execute_contact_form');
+add_action('admin_post_nopriv_clinicoeurs_contact_form', 'clinicoeurs_execute_contact_form');
+add_action('admin_post_clinicoeurs_contact_form', 'clinicoeurs_execute_contact_form');
 
 // Travailler avec la session de PHP
 function clinicoeurs_session_flash(string $key, mixed $value)
