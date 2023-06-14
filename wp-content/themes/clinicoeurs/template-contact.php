@@ -3,7 +3,6 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
 <main class="layout__contact">
-    <div class="contact__background background"></div>
     <section aria-labelledby="contact" class="contact">
         <h2 class="contact__title title" aria-level="2"><?= get_the_title(); ?></h2>
         <div class="asbl_contact">
@@ -97,16 +96,23 @@
                     </div>
                 </section>
         </div>
+        <div class="boutique__contact">
+            <section aria-labelledby="mail" class="coordinates__mail">
+                <h4 id="mail" class="coordinates__title bold title" aria-level="4"><?= 'Mail' ?></h4>
+                <p class="coordinates__mail mail" ><a href="mailto:<?= get_field('mail')?>" itemprop="email"><?= get_field('mail')?></a></p>
+            </section>
+            <section aria-labelledby="telephone" class="coordinates__phone">
+                <h4 id="telephone" class="coordinates__title bold title" aria-level="4"><?= 'Téléphone' ?></h4>
+                <p class="coordinates__mail phone" itemprop="telephone"><?= get_field('phone')?></p>
+            </section>
+            <section aria-labelledby="address" class="coordinates__address" itemscope itemtype="https://schema.org/PostalAddress">
+                <h4 id="address" class="coordinates__title bold title" aria-level="4"><?= 'Adresse' ?></h4>
+                <p itemprop="streetAddress" class="coordinates__adress">Rue du canal, 18</p>
+                <p itemprop="postalCode" class="coordinates__postal">4684, HACCOURT</p>
+            </section>
+        </div>
     </section>
     </div>
-    </section>
-
-
-
-    <section aria-labelledby="address" class="coordinates__address" itemscope itemtype="https://schema.org/PostalAddress">
-        <h4 id="address" class="coordinates__title bold title" aria-level="4"><?= 'Adresse' ?></h4>
-        <p itemprop="streetAddress" class="coordinates__adress">Rue du canal, 18</p>
-        <p itemprop="postalCode" class="coordinates__postal">4684, HACCOURT</p>
     </section>
 </main>
 <?php endwhile; endif; ?>
