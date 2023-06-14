@@ -7,32 +7,39 @@
             <div class="hero__regroup flex">
                 <h3 class="hero__title title">Apportez un peu de <span class="bold">légèreté</span> et de <span class="bold">joie</span> dans votre quotidien !</h3>
                 <p class="hero__description"><?= get_field('accueil_description')?></p>
-                <a href=""><span class="bold hero__mission">Notre mission</span></a>
+                <a href="" class="hero__mission"><span class="bold hero__mission flex">Notre mission</span></a>
             </div>
             <figure class="hero__fig">
-                <img class="hero__img"src="http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png" srcset="http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png 200w, http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png 600w" sizes="(max-width:350px) 300px, (max-width:1200px) 600px" alt="Image d'un clown">
+                <img class="hero__img"src="http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png" srcset="http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png 200w, http://clinicoeurs.localhost/wp-content/uploads/600Sans-titre-1.png 600w" sizes="(max-width:350px) 300px, (max-width:1200px) 700px" alt="Image d'un clown">
             </figure>
         </div>
     </section>
 
     <section class="index__services services">
-        <h3 class="services__title title">Découvrez nos <span class="bold rect_green">différents services</span></h3>
-        <?php $services = new WP_Query([
-        'post_type' => 'services',
-        'posts_per_page' => 4
-        ]);
-        if($services->have_posts()): while($services->have_posts()): $services->the_post();?>
-        <div class="services__content content">
-            <h4 class="content__title"><?= get_field('services_titre_1') ?></h4>
-            <p class="content__text"><?= get_field('services_description') ?></p>
+        <h3 class="services__principaltitle title">Découvrez nos <span class="bold rect_green">différents services</span></h3>
+        <div class="services__all flex">
+            <?php $services = new WP_Query([
+                'post_type' => 'services',
+                'posts_per_page' => 4
+            ]);
+            if($services->have_posts()): while($services->have_posts()): $services->the_post();?>
+                <div class="services__content">
+                    <h4 class="services__title bold"><?= get_the_title() ?></h4>
+                    <p class="services__text"><?= get_field('services_description') ?></p>
+                </div>
+            <?php endwhile; else: ?>
+                <p class="projects__empty">Il n'y a pas de services pour le moment. </p>
+            <?php endif; wp_reset_query(); ?>
         </div>
-        <?php endwhile; else: ?>
-            <p class="projects__empty">Il n'y a pas de services pour le moment. </p>
-        <?php endif; wp_reset_query(); ?>
     </section>
 
     <section class="index__vendre vendre">
-        <h3 class="vendre__title title">Découvrez ce que nous <span class="bold rect_yellow">vendons</span></h3>
+        <div class="vendre__regroup flex">
+            <h3 class="vendre__title title">Découvrez ce que nous <span class="bold rect_yellow">vendons</span></h3>
+            <div class="vendre__wrapper">
+                <p class="vendre__more">En voir plus</p><span class="bubble"></span>
+            </div>
+        </div>
         <?php $produit = new WP_Query([
             'post_type' => 'produit',
             'posts_per_page' => 4
