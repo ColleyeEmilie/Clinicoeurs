@@ -3,35 +3,42 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <main class="partenaire">
     <h2 class="hidden">Nos partenaires</h2>
-    <section class="partenaire__hero hero">
-        <h3 class="hero__title title"><?= get_field('partenaire_titre') ?></h3>
-        <p class="hero__text"><?= get_field('partenaire_accroche') ?></p>
+    <section class="partenaire__hero hero flex">
+        <div class="hero__content">
+            <h3 class="hero__principaltitle title"><?= get_field('partenaire_titre') ?></h3>
+            <p class="hero__text"><?= get_field('partenaire_accroche') ?></p>
+        </div>
+        <figure class="hero__fig">
+            <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'hero__img']); ?>
+        </figure>
     </section>
 
     <section class="partenaire__partenaires partenaires">
-        <h3 class="partenaires__title title">Nos partenaires</h3>
-    <?php $partenaire = new WP_Query([
-        'post_type' => 'partenaire',
-        'posts_per_page' => 100
-    ]);
-    if($partenaire->have_posts()): while($partenaire->have_posts()): $partenaire->the_post();?>
-        <?php $tax = get_the_terms( get_the_ID() , 'partenariat' );?>
-       <?php if($tax[0]->slug === 'partenaire'):?>
-        <div class="partenaires__content">
-            <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
-            <figure class="partenaires__fig">
-                <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
-            </figure>
-            <p class="partenaires_name"><?= get_field('partenaire_name')?></p>
+        <h3 class="partenaires__principaltitle title">Nos partenaires</h3>
+        <div class="partenaires__wrapper flex">
+            <?php $partenaire = new WP_Query([
+                'post_type' => 'partenaire',
+                'posts_per_page' => 100
+            ]);
+            if($partenaire->have_posts()): while($partenaire->have_posts()): $partenaire->the_post();?>
+                <?php $tax = get_the_terms( get_the_ID() , 'partenariat' );?>
+                <?php if($tax[0]->slug === 'partenaire'):?>
+                    <div class="partenaires__content">
+                        <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
+                        <figure class="partenaires__fig">
+                            <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
+                        </figure>
+                    </div>
+                <?php endif;?>
+            <?php endwhile; else: ?>
+                <p class="partenaire__empty">Il n'y a aucune actualité pour le moment.  </p>
+            <?php endif; wp_reset_query(); ?>
+    </section>
         </div>
-        <?php endif;?>
-    <?php endwhile; else: ?>
-        <p class="partenaire__empty">Il n'y a aucune actualité pour le moment.  </p>
-    <?php endif; wp_reset_query(); ?>
-        </section>
 
     <section class="partenaire__collaborateurs collaborateurs">
-        <h3 class="partenaires__title title">Nos collaborateurs</h3>
+        <h3 class="partenaires__principaltitle title">Nos collaborateurs</h3>
+        <div class="partenaires__wrapper flex">
         <?php $partenaire = new WP_Query([
             'post_type' => 'partenaire',
             'posts_per_page' => 100
@@ -44,16 +51,16 @@
                     <figure class="collaborateurs__fig">
                         <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
                     </figure>
-                    <p class="collaborateurs_name"><?= get_field('partenaire_name')?></p>
                 </div>
             <?php endif;?>
         <?php endwhile; else: ?>
             <p class="partenaire__empty">Il n'y a aucune actualité pour le moment.  </p>
         <?php endif; wp_reset_query(); ?>
+        </div>
     </section>
 
     <section class="partenaire__sponsors sponsors">
-        <h3 class="partenaires__title title">Nos sponsors</h3>
+        <h3 class="partenaires__principaltitle title">Nos sponsors</h3>
         <?php $partenaire = new WP_Query([
             'post_type' => 'partenaire',
             'posts_per_page' => 100
@@ -66,7 +73,6 @@
                     <figure class="sponsors__fig">
                         <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
                     </figure>
-                    <p class="sponsors_name"><?= get_field('partenaire_name')?></p>
                 </div>
             <?php endif;?>
         <?php endwhile; else: ?>
@@ -74,10 +80,14 @@
         <?php endif; wp_reset_query(); ?>
     </section>
 
-    <section class="partenaire__contact contact">
-        <h3 class="hidden">Contactez-nous</h3>
-        <p class="contact__text"><?= get_field('partenaire_contact');?></p>
-        <a href="<?= get_field('partenaire_link');?>" class="contact__link">Contactez-nous !</a>
+    <section class="partenaire__contact background-blue contact flex column">
+        <h3 class="hidden"> Contactez-nous</h3>
+        <div class="contact__content flex column">
+            <p class="contact__text"><?= get_field('partenaire_contact')?></p>
+            <div class="contact__wrapper flex">
+                <a href="<?= get_field('partenaire_link')?>" class="contact__link">Contactez-nous !</a>
+            </div>
+        </div>
     </section>
 
 </main>

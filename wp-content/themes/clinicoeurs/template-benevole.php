@@ -13,7 +13,7 @@
             </div>
 
             <figure class="hero__fig">
-                <img src="<?= get_field('benevolat_image_1')?>" alt="" class="hero__img">
+                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'hero__img']); ?>
             </figure>
         </div>
 
