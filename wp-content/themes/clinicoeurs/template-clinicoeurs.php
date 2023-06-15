@@ -105,7 +105,7 @@
                     <p class="benevolat__texte"><?= get_field('clinicoeurs_benevole_description')?></p>
                 </div>
                 <figure class="benevolat__fig">
-                    <img src="" alt="" class="benevolat__img">
+                    <img src="<?= get_field('benevolat_image_3')?>" alt="" class="benevolat__img">
                 </figure>
             </div>
         </section>

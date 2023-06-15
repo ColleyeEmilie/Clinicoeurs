@@ -1,0 +1,127 @@
+.benevolat{
+  &__hero, &__benevoles, &__benevolat,.contact__content{
+    padding: 70px 70px 80px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .title{
+    font-size: em(36);
+  }
+  &__benevoles{
+    .benevoles{
+      &__principaltitle{
+        margin-bottom: em(22.23)
+      }
+      &__all{
+        justify-content: space-between;
+      }
+      &__wrapper{
+        min-width: 240px;
+        max-width: 240px;
+        box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.05);
+        border-radius: 15px;
+        padding: 30px 30px;
+        margin-bottom: 2em;
+      }
+      &__content{
+        margin-bottom: 1em;
+      }
+      &__fonction{
+        font-size: em(24);
+        font-family: "p22-mackinac-pro", serif;
+        text-align: center;
+      }
+    }
+  }
+  &__hero{
+    .hero{
+      &__desc{
+        &--1{
+          justify-content: space-between;
+          margin-bottom: em(100);
+        }
+        &--2{
+          justify-content: space-between;
+        }
+      }
+      &__principaltitle{
+        margin-bottom: em(22.23);
+        line-height: 1.4em;
+      }
+      &__content, &__text--2{
+        max-width: 470px;
+      }
+      &__content{
+        margin-right: em(40);
+      }
+      &__text--2{
+        align-self: center;
+      }
+      &__fig, &__img{
+        max-width: 450px;
+        max-height: 450px;
+        min-height: 350px;
+        border-radius: 15px;
+      }
+      &__img{
+        object-fit: cover;
+      }
+      &__hero{
+        &__fig--2{
+          margin-right: em(40);
+        }
+      }
+
+    }
+  }
+  &__benevolat{
+    .benevolat{
+      &__wrapper{
+        justify-content: space-between;
+      }
+      &__fig, &__img{
+        max-width: 400px;
+        max-height: 400px;
+        min-height: 300px;
+        border-radius: 15px;
+      }
+      &__img{
+        object-fit: cover;
+      }
+      &__content{
+        max-width: 500px;
+        margin-right: em(20);
+      }
+      &__title{
+        margin-bottom: em(15);
+        line-height: 1.4em;
+      }
+    }
+  }
+  &__contact{
+    align-items: center;
+    .contact{
+      align-items: center;
+      &__content{
+        max-width: 400px;
+        text-align: center;
+        align-items: center;
+      }
+      &__text{
+        margin-bottom: em(40);
+      }
+      &__wrapper{
+        height: 50px;
+        width: 200px;
+        border-radius: 15px;
+        background-color: $color_yellow;
+        justify-content: center;
+      }
+      &__link{
+        align-self: center;
+        color:white;
+        padding: em(10);
+      }
+    }
+  }
+}

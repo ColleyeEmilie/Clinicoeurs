@@ -6,9 +6,9 @@
     <?php $types = get_terms(['taxonomy' => 'type']); ?>
 
     <section class="benevolat__hero hero">
-        <div class="hero__desc--1">
+        <div class="hero__desc--1 flex">
             <div class="hero__content">
-                <h3 class="title hero__title"><?= get_field('benevolat_title')?></h3>
+                <h3 class="title hero__principaltitle"><?= get_field('benevolat_title')?></h3>
                 <p class="hero__text--1"><?= get_field('benevolat_description_1')?></p>
             </div>
 
@@ -17,63 +17,68 @@
             </figure>
         </div>
 
-        <div class="hero__desc--1">
-            <p class="hero__text--2"><?= get_field('benevolat_description_2')?></p>
-            <figure class="hero__fig">
+        <div class="hero__desc--2 flex" >
+            <figure class="hero__fig hero__fig--2">
                 <img src="<?= get_field('benevolat_image_2')?>" alt="" class="hero__img">
+            </figure>
+            <p class="hero__text--2"><?= get_field('benevolat_description_2')?></p>
+        </div>
+    </section>
+
+    <section class="benevolat__benevoles benevoles">
+        <h3 class="benevoles__principaltitle title">Nous recherchons des <span class="bold">bénévoles !</span></h3>
+        <div class="benevoles__all flex">
+            <?php $profils = new WP_Query([
+                'post_type' => 'benevolat',
+                'posts_per_page' => 100
+            ]);
+            if($profils->have_posts()): while($profils->have_posts()): $profils->the_post();?>
+                <div class="benevoles__wrapper flex column">
+                    <div class="benevoles__content">
+                        <h4 class="benevoles__fonction title bold"><?= get_field('profil_fonction') ?></h4>
+                    </div>
+                    <div class="benevoles__content">
+                        <h4 class="benevoles__title bold">Description</h4>
+                        <p class="benevoles__text"><?= get_field('profil_description') ?></p>
+                    </div>
+                    <div class="benevoles__content">
+                        <h4 class="benevoles__title bold">Competence(s) requise(s)</h4>
+                        <p class="benevoles__text"><?= get_field('profil_competences')?></p>
+                    </div>
+                    <div class="benevoles__content">
+                        <h4 class="benevoles__title bold">Fréquence de disponibilité</h4>
+                        <p class="benevoles__text"><?= get_field('services_frequence') ?></p>
+                    </div>
+                    <div class="benevoles__content">
+                        <h4 class="benevoles__title bold">Lieu</h4>
+                        <p class="benevoles__text"><?= get_field('profil_lieu') ?></p>
+                    </div>
+                </div>
+            <?php endwhile; else: ?>
+                <p class="projects__empty">Il n'y a pas de services pour le moment. </p>
+            <?php endif; wp_reset_query(); ?>
+        </div>
+    </section>
+    <section class="benevolat__benevolat benevolat">
+        <h3 class="hidden">Bénévolat</h3>
+        <div class="benevolat__wrapper flex">
+            <div class="benevolat__content flex column">
+                <h4 class="benevolat__title title"><?= get_field('benevolat_titre_3')?></h4>
+                <p class="benevolat__texte"><?= get_field('benevolat_description_3')?></p>
+            </div>
+            <figure class="benevolat__fig">
+                <img src="<?= get_field('benevolat_image_3')?>" alt="" class="benevolat__img">
             </figure>
         </div>
     </section>
 
-    <section class="benevolat__profil profil">
-        <h3 class="hidden"> Profils que nous recherchons</h3>
-        <?php $benevolat = new WP_Query([
-            'post_type' => 'benevolat',
-            'posts_per_page' => 10
-        ]);
-        if($benevolat->have_posts()): while($benevolat->have_posts()): $benevolat->the_post();?>
-                <article class="profil__content content">
-                    <h4 class="content__title title"><?= get_field('profil_fonction')?></h4>
-                    <div class="content__desc desc">
-                        <h5 class="desc__title">Description:</h5>
-                        <p class="desc__texte"><?= get_field('profil_description')?></p>
-                    </div>
-
-                    <div class="content__desc desc">
-                        <h5 class="desc__title">Compétence(s) requise(s):</h5>
-                        <p class="desc__texte"><?= get_field('profil_competences')?></p>
-                    </div>
-
-                    <div class="content__desc desc">
-                        <h5 class="desc__title">Fréquence de disponibilité par semaine:</h5>
-                        <p class="desc__texte"><?= get_field('profil_frequence')?></p>
-                    </div>
-
-                    <div class="content__desc desc">
-                        <h5 class="desc__title">Lieu:</h5>
-                        <p class="desc__texte"><?= get_field('profil_lieu')?></p>
-                    </div>
-                </article>
-        <?php endwhile; else: ?>
-            <p class="actualite__empty">Il n'y a aucun profil recherché pour le moment.  </p>
-        <?php endif; wp_reset_query(); ?>
-    </section>
-
-    <section class="benevolat__recherche recherche">
-        <div class="recherche__content">
-            <h3 class="recherche__title title"><?= get_field('benevolat_titre_3')?></h3>
-            <p class="recherche_text"><?= get_field('benevolat_description_3')?></p>
-        </div>
-        <figure class="recherche_fig">
-            <img src="<?= get_field('benevolat_image_3')?>" alt="" class="recherche_img">
-        </figure>
-    </section>
-
-    <section class="benevolat__contact contact">
+    <section class="benevolat__contact background-blue contact flex column">
         <h3 class="hidden"> Contactez-nous</h3>
-        <p class="contact__text"><?= get_field('benevolat_contact')?></p>
-        <div class="contact__wrapper">
-            <a href="<?= get_field('benevolat_link')?>" class="contact__link">Contactez-nous !</a>
+        <div class="contact__content flex column">
+            <p class="contact__text"><?= get_field('benevolat_contact')?></p>
+            <div class="contact__wrapper flex">
+                <a href="<?= get_field('benevolat_link')?>" class="contact__link">Contactez-nous !</a>
+            </div>
         </div>
     </section>
 </main>

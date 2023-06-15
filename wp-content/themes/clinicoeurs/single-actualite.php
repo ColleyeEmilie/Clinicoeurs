@@ -2,12 +2,12 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
     <main class="singleActualite">
         <section class="singleActualite__actualite actualite">
-            <h3 class="actualite__title"><?= get_field('');?></h3>
-            <div class="actualite__wrapper">
+            <h3 class="actualite__principaltitle"><?= get_the_title();?></h3>
+            <div class="actualite__wrapper flex">
                 <figure class="actualite__fig">
-                    <img src="<?= get_field('article_image');?>" alt="" class="actualite__img">
+                    <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'actualite__img']); ?>
                 </figure>
-                <div class="actualite__content">
+                <div class="actualite__content flex column">
                     <p class="actualite__texte">
                         <?= get_field('article_description');?>
                     </p>
@@ -19,18 +19,20 @@
         </section>
 
         <section class="singleActualite__like like">
-            <h3 class="like__title">Vous pourriez aussi <span>aimer</span></h3>
-            <div class="like__wrapper">
+            <div class="like__regroup flex">
+                <h3 class="like__principaltitle title">Vous pourriez aussi <span class="bold rect_yellow">aimer</span></h3>
+            </div>
+            <div class="like__all flex">
                 <?php $actualite = new WP_Query([
                     'post_type' => 'actualite',
                     'posts_per_page' => 3
                 ]);
                 if($actualite->have_posts()): while($actualite->have_posts()): $actualite->the_post();?>
-                    <a href="<?= get_the_permalink();?>" class="tri__link">
-                        <article class="like__content content">
-                            <h4 class="content__title"><?= get_the_title()?></h4>
-                            <figure class="content__fig">
-                                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'latest__img']); ?>
+                    <a href="<?= get_the_permalink();?>" class="like__link">
+                        <article class="like__content content flex">
+                            <h4 class="like__title"><?= get_the_title()?></h4>
+                            <figure class="like__fig">
+                                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'like__img']); ?>
                             </figure>
                         </article>
                     </a>
