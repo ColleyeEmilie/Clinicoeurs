@@ -14,7 +14,7 @@ add_image_size('products_thumbnail', 300, 300, true);
 add_image_size('latest_thumbnail', 600, 400, true);
 add_image_size('partenaire_thumbnail', 150, 150, true);
 add_image_size('clinicoeurs_thumbnail', 500, 600, true);
-add_image_size('equipe_thumbnail', 50, 50, true);
+add_image_size('equipe_thumbnail', 100, 100, true);
 
 // Register existing navigation menus
 register_nav_menu('main', 'Navigation principale du site web (en-tête)');

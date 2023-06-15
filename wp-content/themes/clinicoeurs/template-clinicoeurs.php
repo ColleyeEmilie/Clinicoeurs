@@ -31,8 +31,8 @@
                 <?php endif; wp_reset_query(); ?>
             </div>
         </section>
-        <section class="clinicoeurs__equipe tri">
-            <h3 class="equipe__title title"> Notre équipe</h3>
+        <section class="clinicoeurs__equipe background-blue tri">
+            <h3 class="equipe__principaltitle title"> Notre équipe</h3>
             <?php $types = get_terms(['taxonomy' => 'section']); ?>
             <ul class="tri__items flex">
                 <?php foreach($types as $type): ?>
@@ -42,9 +42,9 @@
                 <?php endforeach; ?>
             </ul>
 
-            <div class="flex wrapper">
+            <div class="flex column">
                 <h4>Clinicoeurs</h4>
-                <div class="equipe__wrapper flex">
+                <div class="equipe__wrapper equipe__wrapper--clinicoeur flex">
                     <?php $equipe = new WP_Query([
                         'post_type' => 'equipe',
                         'posts_per_page' => 100
@@ -63,18 +63,17 @@
                 </div>
             </div>
         </section>
-
         <section class="clinicoeurs__benevoles benevoles">
-            <h3 class="benevoles__title title">Nous recherchons des <span>bénévoles !</span></h3>
+            <h3 class="benevoles__principaltitle title">Nous recherchons des <span class="bold">bénévoles !</span></h3>
             <div class="benevoles__all flex">
                 <?php $profils = new WP_Query([
                     'post_type' => 'benevolat',
                     'posts_per_page' => 100
                 ]);
                 if($profils->have_posts()): while($profils->have_posts()): $profils->the_post();?>
-                <div class="benevoles__wrapper flex">
+                <div class="benevoles__wrapper flex column">
                     <div class="benevoles__content">
-                        <h4 class="benevoles__title bold"><?= get_field('profil_fonction') ?></h4>
+                        <h4 class="benevoles__fonction title bold"><?= get_field('profil_fonction') ?></h4>
                     </div>
                     <div class="benevoles__content">
                         <h4 class="benevoles__title bold">Description</h4>
@@ -96,6 +95,18 @@
                 <?php endwhile; else: ?>
                     <p class="projects__empty">Il n'y a pas de services pour le moment. </p>
                 <?php endif; wp_reset_query(); ?>
+            </div>
+        </section>
+        <section class="clinicoeurs__benevolat benevolat">
+            <h3 class="hidden">Bénévolat</h3>
+            <div class="benevolat__wrapper flex">
+                <div class="benevolat__content flex column">
+                    <h4 class="benevolat__title title"><?= get_field('clinicoeurs_benevole_titre')?></h4>
+                    <p class="benevolat__texte"><?= get_field('clinicoeurs_benevole_description')?></p>
+                </div>
+                <figure class="benevolat__fig">
+                    <img src="" alt="" class="benevolat__img">
+                </figure>
             </div>
         </section>
     </main>

@@ -31,6 +31,12 @@ a{
 .flex{
   display: flex;
 }
+.column{
+  flex-direction: column;
+}
+.background-blue{
+  background-color: $color_backgroundBlue;
+}
 
 @keyframes scrollTxt {
   0%{

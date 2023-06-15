@@ -1,5 +1,5 @@
 .clinicoeurs{
-  &__services, &__equipe, &__benevoles{
+  &__services, &__equipe, &__benevoles, &__benevolat{
     padding: 70px 70px 80px;
     max-width: 980px;
     margin: 0 auto;
@@ -57,14 +57,59 @@
      }
    }
   &__equipe{
-    .wrapper{
-        flex-direction: column;
-    }
-  &__benevoles{
-    .benevole{
-      &__wrapper, &__all{
-        flex-direction: column;
+    .equipe{
+      &__principaltitle{
+        margin-bottom: em(22.23)
+      }
+      &__fig, &__img{
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+      }
+      &__img{
+        object-fit: cover;
+      }
+      &__wrapper{
+        justify-content: space-around;
+        flex-wrap: wrap;
       }
     }
   }
-}}
+  &__benevoles{
+    .benevoles{
+      &__principaltitle{
+        margin-bottom: em(22.23)
+      }
+      &__all{
+        justify-content: space-between;
+      }
+      &__wrapper{
+        min-width: 240px;
+        max-width: 240px;
+        box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.05);
+        border-radius: 15px;
+        padding: 30px 30px;
+        margin-bottom: 2em;
+      }
+      &__content{
+        margin-bottom: 1em;
+      }
+      &__fonction{
+        font-size: em(24);
+        font-family: "p22-mackinac-pro", serif;
+        text-align: center;
+      }
+    }
+  }
+  &__benevolat{
+    .benevolat{
+      &__content{
+        max-width: 500px;
+      }
+      &__title{
+        margin-bottom: em(15);
+        line-height: 1.4em;
+      }
+    }
+  }
+}
