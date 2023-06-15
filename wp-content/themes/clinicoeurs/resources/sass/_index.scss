@@ -73,22 +73,36 @@
   &__vendre{
     background-color: $color_backgroundBlue;
     .vendre {
+      &__link{
+        margin-right: em(40);
+      }
+      &__link, &__content, &__title{
+        max-width: 220px;
+      }
+      &__title{
+        position: absolute;
+        height: 185px;
+        text-align: center;
+        min-width: 220px;
+        justify-content: center;
+        align-items: end;
+        z-index: 11;
+        padding-bottom: 100px;
+      }
+
       &__regroup {
         margin-bottom: 1.6em;
         justify-content: space-between;
       }
-
       &__more {
         margin-right: em(40);
       }
-
       &__img {
         width: 220px;
         height: 230px;
         object-fit: cover;
         border-radius: 15px;
       }
-
       &__fig::before {
         margin-top: 115px;
         max-height: 115px;

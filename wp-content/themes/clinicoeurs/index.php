@@ -35,7 +35,7 @@
 
     <section class="index__vendre vendre">
         <div class="vendre__regroup flex">
-            <h3 class="vendre__title title">Découvrez ce que nous <span class="bold rect_yellow">vendons</span></h3>
+            <h3 class="vendre__principaltitle title">Découvrez ce que nous <span class="bold rect_yellow">vendons</span></h3>
             <div class="vendre__wrapper">
                 <p class="vendre__more">En voir plus</p><span class="bubble"></span>
             </div>
@@ -45,9 +45,9 @@
             'posts_per_page' => 4
         ]);
         if($produit->have_posts()): while($produit->have_posts()): $produit->the_post();?>
-        <a href="<?= get_the_permalink();?>" class="latest__link">
+        <a href="<?= get_the_permalink();?>" class="vendre__link flex">
         <article class="vendre__content ">
-                <h4 class="vendre__title"><?= get_the_title()?></h4>
+                <h4 class="vendre__title flex"><?= get_the_title()?></h4>
                 <figure class="vendre__fig">
                     <?= get_the_post_thumbnail(null, 'products_thumbnail', ['class' => 'vendre__img']); ?>
                 </figure>
