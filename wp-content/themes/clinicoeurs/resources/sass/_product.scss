@@ -10,12 +10,31 @@
   &__hero{
     justify-content: space-between;
     .hero{
+      &__all{
+        padding-top: 50px;
+      }
+      &__all::before{
+        top:-30%;
+        right: -10%;
+        display: inline-block;
+        background-color: $color_blue;
+        content: "";
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        position: absolute;
+      }
+
       &__principaltitle{
+        z-index: 10;
+        position: relative;
         font-size: em(36);
         margin-bottom: em(22.23);
         line-height: 1.4em;
       }
       &__content{
+        z-index: 10;
+        position: relative;
         align-self: center;
         max-width: 470px;
         margin-right: em(40);
@@ -26,6 +45,10 @@
         max-height: 350px;
         min-height: 350px;
         border-radius: 15px;
+      }
+      &__fig{
+        z-index: 10;
+        position: relative;
       }
       &__img{
         object-fit: cover;
@@ -86,12 +109,99 @@
     }
   }
   @media screen and (max-width: 990px){
-
+    &__hero, &__gallery{
+      padding: 70px 30px 60px;
+      max-width: 780px;
+    }
+    &__title{
+      font-size: em(32);
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__fig, &__img{
+          max-width: 350px;
+          max-height: 300px;
+        }
+      }
+    }
   }
   @media screen and (max-width: 769px){
-
+    &__hero, &__gallery{
+      padding: 70px 30px 60px;
+      max-width: 450px;
+    }
+    &__title{
+      font-size: em(26);
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__content{
+          max-width: 400px;
+          margin-bottom: 2em;
+        }
+        &__all{
+          flex-direction: column;
+        }
+        &__fig, &__img{
+          max-width: 400px;
+          max-height: 350px;
+        }
+      }
+    }
+    &__gallery{
+      .gallery{
+        &__wrapper{
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        &__fig{
+          margin-right: 0;
+        }
+      }
+    }
   }
   @media screen and (max-width: 479px){
+    &__hero, &__gallery{
+      padding: 70px 30px 60px;
+      max-width: 300px;
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__content{
+          max-width: 300px;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          max-height: 250px;
+          min-width: 300px;
+        }
+      }
+    }
+    &__gallery{
+      .gallery{
 
+        &__wrapper{
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        &__fig{
+          margin-right: 0;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          min-width: 300px;
+        }
+      }
+    }
+    &__contact{
+      .contact{
+        &__content{
+          max-width: 300px;
+        }
+      }
+    }
   }
 }

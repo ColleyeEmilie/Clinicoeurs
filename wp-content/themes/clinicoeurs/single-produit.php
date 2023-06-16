@@ -3,14 +3,16 @@
 <?php $photos = get_field('categorie_gallery');?>
 <main class="catgeory">
     <h2 class="hidden"><?= get_field('categorie_name');?></h2>
-    <section class="category__hero hero flex">
-        <div class="hero__content">
-            <h3 class="hero__principaltitle title"><?= get_field('categorie_name');?></h3>
-            <p class="hero__intro"><?= get_field('categorie_intro');?></p>
+    <section class="category__hero hero ">
+        <div class="hero__all flex">
+            <div class="hero__content">
+                <h3 class="hero__principaltitle title"><?= get_field('categorie_name');?></h3>
+                <p class="hero__intro"><?= get_field('categorie_intro');?></p>
+            </div>
+            <figure class="hero__fig">
+                <?= get_the_post_thumbnail(null, 'clinicoeurs_thumbnail', ['class' => 'hero__img']); ?>
+            </figure>
         </div>
-        <figure class="hero__fig">
-            <?= get_the_post_thumbnail(null, 'clinicoeurs_thumbnail', ['class' => 'hero__img']); ?>
-        </figure>
     </section>
 
     <section class="category__gallery gallery">
