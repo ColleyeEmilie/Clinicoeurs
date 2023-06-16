@@ -10,17 +10,38 @@
   &__hero{
     justify-content: space-between;
     .hero{
+      &__all{
+        padding-top: 50px;
+      }
+      &__all::before{
+        top:-30%;
+        right: -10%;
+        display: inline-block;
+        background-color: $color_green;
+        content: "";
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        position: absolute;
+      }
+
       &__principaltitle{
+        z-index: 10;
+        position: relative;
         font-size: em(36);
         margin-bottom: em(22.23);
         line-height: 1.4em;
       }
       &__content{
+        z-index: 10;
+        position: relative;
         align-self: center;
         max-width: 470px;
         margin-right: em(40);
       }
       &__fig, &__img{
+        z-index: 10;
+        position: relative;
         max-width: 350px;
         min-width: 350px;
         max-height: 350px;
@@ -102,7 +123,6 @@
       }
     }
   }
-
   &__contact{
     align-items: center;
     .contact{
@@ -130,12 +150,154 @@
     }
   }
   @media screen and (max-width: 990px){
-
+    &__hero, .singleSoutien__all, .contact__content{
+      max-width: 780px;
+    }
+    &__title{
+      font-size: em(33);
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__content{
+          max-width: 400px;
+          margin-right: 0;
+          margin-bottom: 2em;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          min-width: 300px;
+          max-height: 300px;
+          min-height: 300px;
+        }
+      }
+    }
+    &__singleSoutien{
+      .singleSoutien{
+        &__all{
+          grid-template-areas:
+                  "four"
+                  "one"
+                  "two"
+                  "three"
+                  "five"
+        }
+        &__article:nth-child(1), &__article:nth-child(2), &__article:nth-child(3){
+          margin-bottom: em(40);
+          min-height: 100px;
+          border-radius: 15px;
+          padding: 20px 20px;
+          min-width: 300px;
+          max-width: 300px;
+        }
+        &__article:nth-child(4){
+          max-width: 400px;
+          grid-area: four;
+          width: 700PX;
+          margin-bottom: 2em;
+        }
+      }
+    }
   }
   @media screen and (max-width: 769px){
-
+    &__hero, .singleSoutien__all, .contact__content{
+      max-width: 450px;
+    }
+    &__title{
+      font-size: em(26);
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__all{
+          flex-direction: column;
+        }
+        &__content{
+          max-width: 400px;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          min-width: 300px;
+          max-height: 300px;
+          min-height: 300px;
+        }
+      }
+    }
+    &__singleSoutien{
+      .singleSoutien{
+        &__article:nth-child(1), &__article:nth-child(2), &__article:nth-child(3){
+          margin-bottom: em(40);
+          min-height: 100px;
+          border-radius: 15px;
+          padding: 20px 20px;
+          min-width: 300px;
+          max-width: 300px;
+        }
+        &__article:nth-child(4){
+          flex-direction: column;
+          justify-content: space-between;
+          grid-area: four;
+          width: 700PX;
+          .singleSoutien{
+            &__fig{
+              margin-bottom: 2em;
+              margin-right: 0;
+            }
+            &__content{
+              max-width: 400px;
+              align-self: center;
+            }
+            &__fig, &__img{
+              max-width: 300px;
+              max-height: 300px;
+              min-height: 200px;
+            }
+          }
+        }
+      }
+    }
   }
   @media screen and (max-width: 479px){
-
+    &__hero, .singleSoutien__all, .contact__content{
+      padding: 30px 10px 30px;
+      max-width: 300px;
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__all{
+          padding-top: 80px;
+          flex-direction: column;
+        }
+        &__content{
+          max-width: 300px;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          min-width: 300px;
+          max-height: 300px;
+          min-height: 300px;
+        }
+      }
+    }
+    &__singleSoutien{
+      .singleSoutien{
+        &__article:nth-child(1), &__article:nth-child(2), &__article:nth-child(3){
+          margin-bottom: em(40);
+          min-height: 100px;
+          border-radius: 15px;
+          padding: 20px 20px;
+          min-width: 250px;
+          max-width: 250px;
+        }
+        &__article:nth-child(4){
+          .singleSoutien{
+            &__content{
+              max-width: 250px;
+            }
+          }
+        }
+      }
+    }
   }
 }
