@@ -3,14 +3,16 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <main class="partenaire">
     <h2 class="hidden">Nos partenaires</h2>
-    <section class="partenaire__hero hero flex">
-        <div class="hero__content">
-            <h3 class="hero__principaltitle title"><?= get_field('partenaire_titre') ?></h3>
-            <p class="hero__text"><?= get_field('partenaire_accroche') ?></p>
+    <section class="partenaire__hero hero">
+        <div class="hero__all flex">
+            <div class="hero__content">
+                <h3 class="hero__principaltitle title"><?= get_field('partenaire_titre') ?></h3>
+                <p class="hero__text"><?= get_field('partenaire_accroche') ?></p>
+            </div>
+            <figure class="hero__fig">
+                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'hero__img']); ?>
+            </figure>
         </div>
-        <figure class="hero__fig">
-            <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'hero__img']); ?>
-        </figure>
     </section>
 
     <section class="partenaire__partenaires partenaires">
