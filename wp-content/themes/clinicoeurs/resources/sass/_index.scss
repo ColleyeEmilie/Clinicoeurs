@@ -529,15 +529,12 @@
     }
   }
   @media screen and (max-width: 769px){
-
     &_bubble-d{
       left:30px;
     }
-
     .fleche_droite::after{
       right: 0px;
     }
-
     &__services, .vendre, &__soutiens, .actualites, .hero__content, &__avis{
       padding: 30px 20px 30px;
       max-width: 450px;

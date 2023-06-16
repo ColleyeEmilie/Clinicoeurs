@@ -14,6 +14,7 @@
                 </figure>
             </div>
         </section>
+
         <section class="clinicoeurs__services services">
             <h3 class="services__principaltitle title">Que <span class="bold rect rect_green">faisons-nous ?</span></h3>
             <div class="services__all flex">
@@ -98,14 +99,13 @@
             </div>
         </section>
         <section class="clinicoeurs__benevolat benevolat">
-            <h3 class="hidden">Bénévolat</h3>
             <div class="benevolat__wrapper flex">
                 <div class="benevolat__content flex column">
-                    <h4 class="benevolat__title title"><?= get_field('clinicoeurs_benevole_titre')?></h4>
+                    <h3 class="benevolat__title title"><?= get_field('clinicoeurs_benevole_titre')?></h3>
                     <p class="benevolat__texte"><?= get_field('clinicoeurs_benevole_description')?></p>
                 </div>
                 <figure class="benevolat__fig">
-                    <img src="<?= get_field('benevolat_image_3')?>" alt="" class="benevolat__img">
+                    <img src="<?= get_field('clinicoeurs_image')?>" alt="" class="benevolat__img">
                 </figure>
             </div>
         </section>

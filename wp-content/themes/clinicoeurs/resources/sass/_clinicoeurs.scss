@@ -7,15 +7,25 @@
   .title{
     font-size: em(36);
   }
-
   &__hero{
     padding-top: 100px;
     padding-bottom: 70px;
     .hero{
+      &__all::before{
+        left:-10%;
+        display: inline-block;
+        background-color: $color_green;
+        content: "";
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        position: absolute;
+      }
       &__all{
         justify-content: center;
       }
         &__content{
+          z-index:10;
           max-width: 500px;
           align-self: center;
           flex-direction: column;
@@ -30,6 +40,9 @@
           line-height: 1.4em;
           margin-bottom: .6em;
         }
+      &__fig{
+        z-index:10;
+      }
       }
   }
   &__services{
@@ -77,6 +90,16 @@
   }
   &__benevoles{
     .benevoles{
+      &__all::before{
+        right:-10%;
+        display: inline-block;
+        background-color: $color_blue;
+        content: "";
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        position: absolute;
+      }
       &__principaltitle{
         margin-bottom: em(22.23)
       }
@@ -84,6 +107,8 @@
         justify-content: space-between;
       }
       &__wrapper{
+        background-color: white;
+        z-index: 10;
         min-width: 240px;
         max-width: 240px;
         box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.05);
@@ -105,21 +130,293 @@
     .benevolat{
       &__content{
         max-width: 500px;
+        margin-right: 3em;
+      }
+      &__wrapper{
+        justify-content: space-between;
       }
       &__title{
         margin-bottom: em(15);
         line-height: 1.4em;
       }
+      &__fig, &__img{
+        max-width: 450px;
+        max-height: 300px;
+        min-height: 300px;
+        border-radius: 15px;
+      }
+      &__img{
+        object-fit: cover;
+      }
     }
   }
 
   @media screen and (max-width: 990px){
-
+    &__services, &__equipe, &__benevoles, &__benevolat{
+      padding: 70px 30px 60px;
+      max-width: 780px;
+    }
+    .title{
+      font-size: em(32);
+    }
+    &__hero{
+      padding-top: 120px;
+      padding-bottom: 70px;
+      .hero{
+        &__all::before{
+          left:-20%;
+        }
+        &__content{
+          max-width: 300px;
+        }
+        &__description{
+          margin-bottom: em(40);
+          max-width: 300px;
+        }
+        &__title{
+          font-size: em(36);
+        }
+      }
+    }
+    &__services{
+      .services{
+        &__principaltitle{
+          font-size: em(32);
+        }
+        &__content{
+          margin-bottom: em(30);
+          padding: 20px 20px;
+          min-width: 300px;
+          max-width: 300px;
+        }
+        &__title{
+          font-size: em(20);
+        }
+      }
+    }
+    &__benevoles{
+      .benevoles{
+        &__all::before{
+          right:-20%;
+        }
+        &__principaltitle{
+          font-size: em(32);
+        }
+        &__wrapper{
+          min-width: 200px;
+          max-width: 200px;
+          padding: 30px 20px;
+        }
+        &__content{
+          margin-bottom: 1em;
+        }
+        &__fonction{
+          font-size: em(24);
+          font-family: "p22-mackinac-pro", serif;
+          text-align: center;
+        }
+      }
+    }
+    &__benevolat{
+      .benevolat{
+        &__content{
+          min-width: 300px;
+          max-width: 300px;
+          margin-right: 3em;
+        }
+        &__wrapper{
+          justify-content: space-between;
+        }
+        &__fig, &__img{
+          max-width: 350px;
+          max-height: 400px;
+          min-height: 400px;
+        }
+      }
+    }
   }
   @media screen and (max-width: 769px){
-
+    &__services, &__equipe, &__benevoles, &__benevolat{
+      padding: 30px 20px 30px;
+      max-width: 450px;
+    }
+    .title{
+      font-size: em(26);
+      line-height: 1.4em;
+    }
+    &__hero{
+      padding-top: 120px;
+      padding-bottom: 70px;
+      .hero{
+        &__all::before{
+          left:-20%;
+        }
+        &__fig{
+          align-self: center;
+        }
+        &__content{
+          max-width: 400px;
+        }
+        &__description{
+          margin-bottom: em(20);
+          max-width: 300px;
+        }
+        &__all{
+          flex-direction: column;
+        }
+        &__title{
+          max-width: 400px;
+        }
+      }
+    }
+    &__services{
+      .services{
+        &__principaltitle{
+          font-size: em(26);
+        }
+        &__content{
+          margin-bottom: em(20);
+          padding: 20px 20px;
+          min-width: 400px;
+          max-width: 400px;
+        }
+        &__title{
+          font-size: em(18);
+        }
+      }
+    }
+    &__equipe{
+      .equipe{
+        &__content{
+          margin-bottom: 1em;
+          margin-right: 1em;
+        }
+        &__wrapper{
+          flex-wrap: wrap;
+        }
+      }
+    }
+    &__benevoles{
+      .benevoles{
+        &__all{
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        &__all::before{
+          right:-30%;
+        }
+        &__wrapper{
+          min-width: 300px;
+          max-width: 300px;
+          padding: 30px 20px;
+        }
+        &__content {
+          margin-bottom: 1em;
+        }
+      }
+    }
+    &__benevolat{
+      .benevolat{
+        &__content{
+          min-width: 400px;
+          max-width: 400px;
+          margin-right: 0;
+          margin-bottom: 2em;
+        }
+        &__wrapper{
+          align-items: center;
+          flex-direction: column;
+        }
+        &__fig, &__img{
+          max-width: 400px;
+          max-height: 350px;
+          min-height: 350px;
+        }
+      }
+    }
   }
   @media screen and (max-width: 479px){
-
+    &__services, &__equipe, &__benevoles, &__benevolat{
+      max-width: 300px;
+    }
+    &__hero{
+      padding-top: 120px;
+      padding-bottom: 70px;
+      .hero{
+        &__all::before{
+          left:-40%;
+        }
+        &__content{
+          max-width: 300px;
+        }
+        &__description{
+          max-width: 300px;
+        }
+        &__title{
+          max-width: 300px;
+        }
+      }
+    }
+    &__services{
+      .services{
+        &__principaltitle{
+          line-height: 1.3em;
+        }
+        &__content{
+          margin-bottom: em(20);
+          padding: 10px;
+          min-width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+    &__equipe{
+      .equipe{
+        &__content{
+          margin-bottom: 1em;
+          margin-right: 1em;
+        }
+        &__wrapper{
+          flex-wrap: wrap;
+        }
+      }
+    }
+    &__benevoles{
+      .benevoles{
+        &__all::before{
+          right:-40%;
+        }
+        &__wrapper{
+          min-width: 250px;
+          max-width: 250px;
+          padding: 30px 20px;
+        }
+        &__content {
+          margin-bottom: 1em;
+        }
+        &__fonction{
+          font-size: em(20);
+        }
+      }
+    }
+    &__benevolat{
+      .benevolat{
+        &__content{
+          min-width: 300px;
+          max-width: 300px;
+          margin-right: 0;
+          margin-bottom: 2em;
+        }
+        &__wrapper{
+          align-items: center;
+          flex-direction: column;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          max-height: 250px;
+          min-height: 250px;
+        }
+      }
+    }
   }
 }
