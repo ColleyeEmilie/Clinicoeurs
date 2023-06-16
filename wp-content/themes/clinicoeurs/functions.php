@@ -18,7 +18,8 @@ add_image_size('equipe_thumbnail', 100, 100, true);
 
 // Register existing navigation menus
 register_nav_menu('main', 'Navigation principale du site web (en-tête)');
-register_nav_menu('social-media', 'Liens vers les réseaux sociaux');
+register_nav_menu('services', 'Nos services');
+register_nav_menu('navigation', 'Navigation');
 
 function clinicoeurs_register_custom_taxonomies()
 {
@@ -95,6 +96,7 @@ function clinicoeurs_get_menu(string $location, ?array $attributes = []): array
 
         $links[] = $link;
     }
+
     return $links;
 }
 
@@ -169,6 +171,21 @@ function clinicoeurs_register_custom_post_types()
         'supports' => ['title','thumbnail'],
     ]);
 
+}
+
+function __clinicoeurs(string $translation, array $replacements = [])
+{
+    // 1. Récupérer la traduction de la phrase présente dans $translation
+    $base = __($translation, 'clinicoeurs');
+
+    // 2. Remplacer toutes les occurrences des variables par leur valeur
+    foreach ($replacements as $key => $value) {
+        $variable = ':' . $key;
+        $base = str_replace($variable, $value, $base);
+    }
+
+    // 3. Retourner la traduction complète.
+    return $base;
 }
 
 add_action('init', 'clinicoeurs_register_custom_post_types');

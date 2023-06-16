@@ -156,7 +156,15 @@
         position: absolute;
         background: linear-gradient(0deg, $color_font, rgba(8, 28, 21, 0));
       }
-
     }
+  }
+  @media screen and (max-width: 990px){
+
+  }
+  @media screen and (max-width: 769px){
+
+  }
+  @media screen and (max-width: 479px){
+
   }
 }
