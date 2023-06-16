@@ -20,7 +20,7 @@
 
         <section class="singleActualite__like like">
             <div class="like__regroup flex">
-                <h3 class="like__principaltitle title">Vous pourriez aussi <span class="bold rect_yellow">aimer</span></h3>
+                <h3 class="like__principaltitle title">Vous pourriez aussi <span class="bold rect rect_yellow">aimer</span></h3>
             </div>
             <div class="like__all flex">
                 <?php $actualite = new WP_Query([

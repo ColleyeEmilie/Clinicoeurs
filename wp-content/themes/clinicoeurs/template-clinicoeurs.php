@@ -15,7 +15,7 @@
             </div>
         </section>
         <section class="clinicoeurs__services services">
-            <h3 class="services__principaltitle title">Que <span class="bold rect_green">faisons-nous ?</span></h3>
+            <h3 class="services__principaltitle title">Que <span class="bold rect rect_green">faisons-nous ?</span></h3>
             <div class="services__all flex">
                 <?php $services = new WP_Query([
                     'post_type' => 'services',
@@ -64,7 +64,7 @@
             </div>
         </section>
         <section class="clinicoeurs__benevoles benevoles">
-            <h3 class="benevoles__principaltitle title">Nous recherchons des <span class="bold">bénévoles !</span></h3>
+            <h3 class="benevoles__principaltitle title">Nous recherchons des <span class="bold rect rect_blue">bénévoles !</span></h3>
             <div class="benevoles__all flex">
                 <?php $profils = new WP_Query([
                     'post_type' => 'benevolat',

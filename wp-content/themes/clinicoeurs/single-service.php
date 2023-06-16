@@ -31,7 +31,7 @@
     </section>
 
     <section class="service__equipe equipe tri">
-        <h3 class="equipe__principaltitle title"> Découvrez les membres de <span class="bold rect_yellow">notre équipe</span></h3>
+        <h3 class="equipe__principaltitle title"> Découvrez les membres de <span class="bold rect rect_yellow">notre équipe</span></h3>
         <div class="flex column">
             <div class="equipe__wrapper equipe__wrapper flex">
                 <?php $equipe = new WP_Query([

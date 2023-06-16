@@ -5,7 +5,7 @@
     <h2 class="hidden">Les actualités</h2>
     <section class="actualite__actualites actualites">
         <div class="actualites__regroup flex">
-            <h3 class="actualites__principaltitle title">Nos dernières <span class="bold rect_green">actualités </span></h3>
+            <h3 class="actualites__principaltitle title">Nos dernières <span class="bold rect rect_green">actualités </span></h3>
         </div>
         <div class="actualites__all">
             <?php $actualite = new WP_Query([
@@ -27,7 +27,7 @@
         </div>
     </section>
      <section class="actualite__tri tri">
-        <h3 class="tri__principaltitle title "> Rechercher un article par <span class="bold rect_yellow">catégorie </span></h3>
+        <h3 class="tri__principaltitle title "> Rechercher un article par <span class="bold rect rect_yellow">catégorie </span></h3>
          <?php $types = get_terms(['taxonomy' => 'type']); ?>
          <ul class="tri__items flex">
              <li class="tri__item">

@@ -16,7 +16,7 @@
     </section>
 
     <section class="index__services services">
-        <h3 class="services__principaltitle title">Découvrez nos <span class="bold rect_green">différents services</span></h3>
+        <h3 class="services__principaltitle title">Découvrez nos <span class="bold rect rect_green">différents services</span></h3>
         <div class="services__all flex">
             <?php $services = new WP_Query([
                 'post_type' => 'services',
@@ -33,38 +33,42 @@
         </div>
     </section>
 
-    <section class="index__vendre vendre">
+    <section class="index__vendre background-blue">
+        <div class="vendre">
         <div class="vendre__regroup flex">
-            <h3 class="vendre__principaltitle title">Découvrez ce que nous <span class="bold rect_yellow">vendons</span></h3>
+            <h3 class="vendre__principaltitle title">Découvrez ce que nous <span class="bold rect rect_yellow">vendons</span></h3>
             <div class="vendre__wrapper">
-                <p class="vendre__more">En voir plus</p><span class="bubble"></span>
+                <a href=""><p class="vendre__more more">En voir plus</p><span class="bubble_yellow"></span></a>
             </div>
         </div>
-        <?php $produit = new WP_Query([
-            'post_type' => 'produit',
-            'posts_per_page' => 4
-        ]);
-        if($produit->have_posts()): while($produit->have_posts()): $produit->the_post();?>
-        <div>
-            <a href="<?= get_the_permalink();?>" class="vendre__link flex">
-                <article class="vendre__content ">
-                    <h4 class="vendre__title flex"><?= get_the_title()?></h4>
-                    <figure class="vendre__fig">
-                        <?= get_the_post_thumbnail(null, 'products_thumbnail', ['class' => 'vendre__img']); ?>
-                    </figure>
-                </article>
-            </a>
+        <div class="flex vendre__all">
+            <?php $produit = new WP_Query([
+                'post_type' => 'produit',
+                'posts_per_page' => 4
+            ]);
+            if($produit->have_posts()): while($produit->have_posts()): $produit->the_post();?>
+                <div>
+                    <a href="<?= get_the_permalink();?>" class="vendre__link flex">
+                        <article class="vendre__content ">
+                            <h4 class="vendre__title flex"><?= get_the_title()?></h4>
+                            <figure class="vendre__fig">
+                                <?= get_the_post_thumbnail(null, 'products_thumbnail', ['class' => 'vendre__img']); ?>
+                            </figure>
+                        </article>
+                    </a>
+                </div>
+            <?php endwhile; else: ?>
+                <p class="projects__empty">Il n'y a aucune façon de nous soutenir pour le moment. </p>
+            <?php endif; wp_reset_query(); ?>
         </div>
-        <?php endwhile; else: ?>
-            <p class="projects__empty">Il n'y a aucune façon de nous soutenir pour le moment. </p>
-        <?php endif; wp_reset_query(); ?>
+        </div>
     </section>
 
     <section class="index__soutiens soutiens">
         <div class="soutiens__regroup flex">
-            <h3 class="soutiens__principaltitle title">Envie de nous <span class="bold rect_blue">soutenir </span>?</h3>
+            <h3 class="soutiens__principaltitle title">Envie de nous <span class=" bold rect_blue rect">soutenir ?</span></h3>
             <div class="soutiens__wrapper">
-                <p class="soutiens__more">En voir plus</p><span class="bubble"></span>
+                <a href=""><p class="soutiens__more more">En voir plus</p><span class="bubble_blue"></span></a>
             </div>
         </div>
         <div class="soutiens__all flex">
@@ -85,50 +89,58 @@
         </div>
     </section>
 
-    <section class="index__actualites background-blue actualites">
-        <div class="actualites__regroup flex">
-            <h3 class="actualites__principaltitle title">Nos dernières <span class="bold rect_violet">actualités </span></h3>
-            <div class="actualites__wrapper">
-                <p class="actualites__more">En voir plus</p><span class="bubble"></span>
+    <section class="index__actualites background-blue">
+        <div class="actualites">
+            <div class="actualites__regroup flex">
+                <h3 class="actualites__principaltitle title">Nos dernières <span class="bold rect rect_violet">actualités </span></h3>
+                <div class="actualites__wrapper">
+                    <a href=""><p class="actualites__more more">En voir plus</p><span class="bubble_violet"></span></a>
+                </div>
             </div>
-        </div>
-        <div class="actualites__all">
-            <?php $actualite = new WP_Query([
-                'post_type' => 'actualite',
-                'posts_per_page' => 3
-            ]);
-            if($actualite->have_posts()): while($actualite->have_posts()): $actualite->the_post();?>
-                <a href="<?= get_the_permalink();?>" class="actualites__link">
-                    <article class="actualites__content flex">
-                        <h4 class="actualites__title"><?= get_the_title()?></h4>
-                        <figure class="actualites__fig">
-                            <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'actualites__img']); ?>
-                        </figure>
-                    </article>
-                </a>
-            <?php endwhile; else: ?>
-                <p class="projects__empty">Il n'y a aucune actualité pour pour le moment.  </p>
-            <?php endif; wp_reset_query(); ?>
+            <div class="actualites__all">
+                <?php $actualite = new WP_Query([
+                    'post_type' => 'actualite',
+                    'posts_per_page' => 3
+                ]);
+                if($actualite->have_posts()): while($actualite->have_posts()): $actualite->the_post();?>
+                    <a href="<?= get_the_permalink();?>" class="actualites__link">
+                        <article class="actualites__content flex">
+                            <h4 class="actualites__title"><?= get_the_title()?></h4>
+                            <figure class="actualites__fig">
+                                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'actualites__img']); ?>
+                            </figure>
+                        </article>
+                    </a>
+                <?php endwhile; else: ?>
+                    <p class="projects__empty">Il n'y a aucune actualité pour pour le moment.  </p>
+                <?php endif; wp_reset_query(); ?>
+            </div>
         </div>
     </section>
 
     <section class="index__avis avis">
-        <h3 class="avis__title title"> Ce qu'ils <span class="bold rect_yellow">pensent</span> de nous</h3>
+        <h3 class="avis__principaltitle title"> Ce qu'ils <span class="bold rect rect_yellow">pensent</span> de nous</h3>
         <div class="avis__all flex">
-            <div class="fleche_gauche"></div>
-            <?php $avis = new WP_Query([
-                'post_type' => 'avis',
-                'posts_per_page' => 10
-            ]);
-            if($avis->have_posts()): while($avis->have_posts()): $avis->the_post();?>
-                <div class="avis__content flex">
-                    <h4 class="avis__name bold"><?= get_field('avis_nom') ?></h4>
-                    <p class="avis__text"><?= get_field('avis') ?></p>
-                </div>
-            <?php endwhile; else: ?>
-                <p class="projects__empty">Il n'y a aucun avis pour le moment.  </p>
-            <?php endif; wp_reset_query(); ?>
-            <div class="fleche_droite"></div>
+            <div class="fleche">
+                <div class="fleche_gauche"></div><span class="fleche_bubble-g"></span>
+            </div>
+            <div class="avis__all flex">
+                <?php $avis = new WP_Query([
+                    'post_type' => 'avis',
+                    'posts_per_page' => 10
+                ]);
+                if($avis->have_posts()): while($avis->have_posts()): $avis->the_post();?>
+                    <div class="avis__content flex">
+                        <h4 class="avis__name bold"><?= get_field('avis_nom') ?></h4>
+                        <p class="avis__text"><?= get_field('avis') ?></p>
+                    </div>
+                <?php endwhile; else: ?>
+                    <p class="projects__empty">Il n'y a aucun avis pour le moment.  </p>
+                <?php endif; wp_reset_query(); ?>
+            </div>
+            <div class="fleche">
+                <div class="fleche_droite"></div><span class="fleche_bubble-d"></span>
+            </div>
         </div>
     </section>
 

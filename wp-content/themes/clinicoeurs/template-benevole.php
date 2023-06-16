@@ -26,7 +26,7 @@
     </section>
 
     <section class="benevolat__benevoles benevoles">
-        <h3 class="benevoles__principaltitle title">Nous recherchons des <span class="bold">bénévoles !</span></h3>
+        <h3 class="benevoles__principaltitle title">Nous recherchons des <span class="bold rect rect_violet">bénévoles !</span></h3>
         <div class="benevoles__all flex">
             <?php $profils = new WP_Query([
                 'post_type' => 'benevolat',

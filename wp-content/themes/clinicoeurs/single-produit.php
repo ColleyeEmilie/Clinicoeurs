@@ -14,7 +14,7 @@
     </section>
 
     <section class="category__gallery gallery">
-    <h3 class="gallery__principaltitle title">Ce que nous <span>proposons</span></h3>
+    <h3 class="gallery__principaltitle title">Ce que nous <span class="rect bold rect_blue">proposons</span></h3>
         <div class="gallery__wrapper flex">
             <?php foreach ($photos as $photo):?>
                 <figure class="gallery__fig">

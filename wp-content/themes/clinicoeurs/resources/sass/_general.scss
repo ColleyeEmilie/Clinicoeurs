@@ -1,4 +1,5 @@
 body{
+  touch-action : pinch-zoom;
   font-family: "roboto", sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -11,7 +12,7 @@ a:visited, a:hover, a:active, a   {
   color: $color_font;
 }
 a:hover, a:active  {
-  font-weight: bolder;
+  font-weight: normal;
   transition: ease-in-out .5s;
 }
 a{
@@ -37,7 +38,139 @@ a{
 .background-blue{
   background-color: $color_backgroundBlue;
 }
+.rect{
+  display: inline-block;
+  height: 18px;
+}
+.rect_blue{
+  border-bottom: $color_blue 10px solid;
+}
+.rect_yellow{
+  border-bottom: $color_yellow 10px solid;
+}
+.rect_green{
+  border-bottom: $color_green 10px solid;
+}
+.rect_violet{
+  border-bottom: $color_violet 10px solid;
+}
+.more{
+  transition: font-weight .4s ease-in-out;
+  font-weight: normal;
+  text-transform: uppercase;
 
+}
+.more:hover{
+  font-weight: bolder;
+}
+.more::after{
+  content:url('../img/svg/fleche-droite.svg');
+  top: 7px;
+  z-index: 2;
+  position: relative;
+  right: -18px;
+  display: inline-block;
+  width: 24px;
+}
+.fleche_droite::after{
+  content:url('../img/svg/fleche-droite.svg');
+  top: 7px;
+  z-index: 2;
+  position: relative;
+  right: -18px;
+  display: inline-block;
+  width: 24px;
+}
+.fleche{
+  width: 60px;
+  align-self:center;
+  &_bubble-g{
+    display: inline-block;
+    left:5px;
+    bottom:17px;
+    background-color: $color_yellow;
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+  }
+  &_bubble-d{
+    display: inline-block;
+    left:5px;
+    bottom:17px;
+    background-color: $color_yellow;
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+  }
+}
+.fleche_gauche::after{
+  content:url('../img/svg/fleche-droite.svg');
+  rotate: -180deg;
+  top: 7px;
+  z-index: 2;
+  position: relative;
+  right: -18px;
+  display: inline-block;
+  width: 24px;
+}
+.fleche_droite::after{
+  content:url('../img/svg/fleche-droite.svg');
+  rotate: 0deg;
+  top: 15px;
+  right: 7px;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+  width: 24px;
+}
+
+
+.bubble_yellow::before{
+  top: -23px;
+  right: -130px;
+  display: inline-block;
+  background-color: $color_yellow;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}.bubble_blue::before{
+   top: -23px;
+   right: -130px;
+   display: inline-block;
+   background-color: $color_blue;
+   content: "";
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   position: relative;
+ }
+.bubble_violet::before{
+  top: -23px;
+  right: -130px;
+  display: inline-block;
+  background-color: $color_violet;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: relative;
+}
+@keyframes fleche{
+  0%{transform: rotate(0)}
+  25%{transform: rotate(10deg)}
+  50%{transform: rotate(0deg)}
+  75%{transform: rotate(-10deg)}
+  100%{transform: rotate(0deg)}
+}
 @keyframes scrollTxt {
   0%{
     transform: translate(100%);

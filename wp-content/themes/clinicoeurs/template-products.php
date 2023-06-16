@@ -21,7 +21,7 @@
 
     <section class="products__vendre vendre">
         <div class="vendre__regroup flex">
-            <h3 class="vendre__principaltitle title">Découvrez ce que nous <span class="bold rect_yellow">vendons</span></h3>
+            <h3 class="vendre__principaltitle title">Découvrez ce que nous <span class="bold rect rect_yellow">vendons</span></h3>
         </div>
         <?php $produit = new WP_Query([
             'post_type' => 'produit',
