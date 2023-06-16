@@ -10,10 +10,37 @@
   &__presentation{
     justify-content: space-between;
     .presentation1{
+      &__all{
+        padding-top: 40px;
+      }
+      &__all::before{
+        top: 5%;
+        left:-10%;
+        display: inline-block;
+        background-color: $color_yellow;
+        content: "";
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        position: absolute;
+      }
+      &__all::after{
+        top:-30%;
+        right: -10%;
+        display: inline-block;
+        background-color: $color_blue;
+        content: "";
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        position: absolute;
+      }
       &__content{
         margin-bottom: em(50);
       }
       &__wrapper{
+        position: relative;
+        z-index: 10;
         max-width: 470px;
         margin-right: em(50);
       }
@@ -26,11 +53,14 @@
         max-width: 450px;
         max-height: 400px;
       }
+      &__fig{
+        position: relative;
+        z-index: 10;
+      }
       &__img{
         object-fit: cover;
       }
     }
-
     .presentation2{
       &__content{
         margin-bottom: em(50);
@@ -73,7 +103,36 @@
     }
   }
   @media screen and (max-width: 990px){
-
+    &__presentation, &__equipe{
+      padding: 70px 30px 60px;
+      max-width: 780px;
+    }
+    .title{
+      font-size: em(32);
+    }
+    &__presentation{
+      .presentation1{
+        &__content{
+          margin-bottom: em(50);
+        }
+        &__wrapper{
+          max-width: 400px;
+        }
+        &__fig, &__img{
+          max-width: 350px;
+          max-height: 300px;
+        }
+      }
+      .presentation2{
+        &__wrapper{
+          max-width: 400px;
+        }
+        &__fig, &__img{
+          max-width: 350px;
+          max-height: 300px;
+        }
+      }
+    }
   }
   @media screen and (max-width: 769px){
 

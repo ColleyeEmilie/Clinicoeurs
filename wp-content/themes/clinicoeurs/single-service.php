@@ -3,20 +3,22 @@
     <?php $title = get_the_title()?>
 <main class="service">
     <h2 class="hidden"><?= get_the_title()?></h2>
-    <section class="service__presentation presentation1 flex">
-        <div class="presentation1__wrapper">
-            <div class="presentation1__content">
-                <h3 class="title presentation1__title--1"><?= get_field('services_titre_1')?></h3>
-                <p class="presentation1__description--1"><?= get_field('services_qui')?></p>
+    <section class="service__presentation presentation1">
+        <div class="presentation1__all flex">
+            <div class="presentation1__wrapper">
+                <div class="presentation1__content">
+                    <h3 class="title presentation1__title--1"><?= get_field('services_titre_1')?></h3>
+                    <p class="presentation1__description--1"><?= get_field('services_qui')?></p>
+                </div>
+                <div class="presentation1__content">
+                    <h3 class=" title presentation1__title--2"><?= get_field('services_titre_2')?></h3>
+                    <p class="presentation1__description--2"><?= get_field('services_que')?></p>
+                </div>
             </div>
-            <div class="presentation1__content">
-                <h3 class=" title presentation1__title--2"><?= get_field('services_titre_2')?></h3>
-                <p class="presentation1__description--2"><?= get_field('services_que')?></p>
-            </div>
+            <figure class="presentation1__fig">
+                <?= get_the_post_thumbnail(null, 'clinicoeurs_thumbnail', ['class' => 'presentation1__img']); ?>
+            </figure>
         </div>
-        <figure class="presentation1__fig">
-            <?= get_the_post_thumbnail(null, 'clinicoeurs_thumbnail', ['class' => 'presentation1__img']); ?>
-        </figure>
     </section>
     <section class="service__presentation presentation2 flex">
         <figure class="presentation2__fig">
@@ -29,7 +31,6 @@
             </div>
         </div>
     </section>
-
     <section class="service__equipe equipe tri">
         <h3 class="equipe__principaltitle title"> Découvrez les membres de <span class="bold rect rect_yellow">notre équipe</span></h3>
         <div class="flex column">

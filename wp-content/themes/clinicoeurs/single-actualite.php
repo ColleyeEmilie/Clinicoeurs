@@ -2,18 +2,20 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
     <main class="singleActualite">
         <section class="singleActualite__actualite actualite">
-            <h3 class="actualite__principaltitle"><?= get_the_title();?></h3>
-            <div class="actualite__wrapper flex">
-                <figure class="actualite__fig">
-                    <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'actualite__img']); ?>
-                </figure>
-                <div class="actualite__content flex column">
-                    <p class="actualite__texte">
-                        <?= get_field('article_description');?>
-                    </p>
-                    <p class="actualite__date">
-                        <?= get_field('article_date');?>
-                    </p>
+            <div class="actualite__all">
+                <h3 class="actualite__principaltitle"><?= get_the_title();?></h3>
+                <div class="actualite__wrapper flex">
+                    <figure class="actualite__fig">
+                        <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'actualite__img']); ?>
+                    </figure>
+                    <div class="actualite__content flex column">
+                        <p class="actualite__texte">
+                            <?= get_field('article_description');?>
+                        </p>
+                        <p class="actualite__date">
+                            <?= get_field('article_date');?>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
