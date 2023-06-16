@@ -4,24 +4,24 @@
 <main class="benevolat">
     <h2 class="hidden">Bénévolat</h2>
     <?php $types = get_terms(['taxonomy' => 'type']); ?>
-
     <section class="benevolat__hero hero">
-        <div class="hero__desc--1 flex">
-            <div class="hero__content">
-                <h3 class="title hero__principaltitle"><?= get_field('benevolat_title')?></h3>
-                <p class="hero__text--1"><?= get_field('benevolat_description_1')?></p>
+        <div class="hero__all">
+            <div class="hero__desc--1 flex">
+                <div class="hero__content">
+                    <h3 class="title hero__principaltitle"><?= get_field('benevolat_title')?></h3>
+                    <p class="hero__text--1"><?= get_field('benevolat_description_1')?></p>
+                </div>
+                <figure class="hero__fig">
+                    <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'hero__img']); ?>
+                </figure>
             </div>
 
-            <figure class="hero__fig">
-                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'hero__img']); ?>
-            </figure>
-        </div>
-
-        <div class="hero__desc--2 flex" >
-            <figure class="hero__fig hero__fig--2">
-                <img src="<?= get_field('benevolat_image_2')?>" alt="" class="hero__img">
-            </figure>
-            <p class="hero__text--2"><?= get_field('benevolat_description_2')?></p>
+            <div class="hero__desc--2 flex" >
+                <figure class="hero__fig hero__fig--2">
+                    <img src="<?= get_field('benevolat_image_2')?>" alt="" class="hero__img">
+                </figure>
+                <p class="hero__text--2"><?= get_field('benevolat_description_2')?></p>
+            </div>
         </div>
     </section>
 
