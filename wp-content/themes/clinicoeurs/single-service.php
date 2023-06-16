@@ -21,13 +21,15 @@
         </div>
     </section>
     <section class="service__presentation presentation2 flex">
-        <figure class="presentation2__fig">
-            <img src="<?= get_field('services_img_2')?>" alt="" class="presentation2__img">
-        </figure>
-        <div class="presentation2__wrapper">
-            <div class="presentation2__content">
-                <h3 class=" title presentation2__title--1"><?= get_field('services_titre_3')?></h3>
-                <p class="presentation2__description--1"><?= get_field('services_quoi')?></p>
+        <div class="presentation2__all flex">
+            <figure class="presentation2__fig">
+                <img src="<?= get_field('services_img_2')?>" alt="" class="presentation2__img">
+            </figure>
+            <div class="presentation2__wrapper">
+                <div class="presentation2__content">
+                    <h3 class=" title presentation2__title--1"><?= get_field('services_titre_3')?></h3>
+                    <p class="presentation2__description--1"><?= get_field('services_quoi')?></p>
+                </div>
             </div>
         </div>
     </section>
