@@ -3,20 +3,22 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <main class="products">
     <h2 class="hidden">Nos produits</h2>
-    <section class="products__hero hero flex">
-        <div class="hero__content">
-            <div class="hero__part1">
-                <h3 class="hero__title title"><?= get_field('product_title')?></h3>
-                <p class="hero__intro"><?= get_field('product_introduction')?></p>
+    <section class="products__hero hero">
+        <div class="hero__all flex">
+            <div class="hero__content">
+                <div class="hero__part1">
+                    <h3 class="hero__title title"><?= get_field('product_title')?></h3>
+                    <p class="hero__intro"><?= get_field('product_introduction')?></p>
+                </div>
+                <div class="hero__part2">
+                    <h3 class="hero__principaltitle"><?= get_field('product_title_1')?></h3>
+                    <p class="hero__intro"><?= get_field('product_intro_2')?></p>
+                </div>
             </div>
-            <div class="hero__part2">
-                <h3 class="hero__principaltitle"><?= get_field('product_title_1')?></h3>
-                <p class="hero__intro"><?= get_field('product_intro_2')?></p>
-            </div>
+            <figure class="hero__fig">
+                <?= get_the_post_thumbnail(null, 'clinicoeurs_thumbnail', ['class' => 'hero__img']); ?>
+            </figure>
         </div>
-        <figure class="hero__fig">
-            <?= get_the_post_thumbnail(null, 'clinicoeurs_thumbnail', ['class' => 'hero__img']); ?>
-        </figure>
     </section>
 
     <section class="products__vendre vendre">

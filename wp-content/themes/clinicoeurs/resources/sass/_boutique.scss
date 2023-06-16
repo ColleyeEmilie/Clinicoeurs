@@ -10,7 +10,23 @@
   &__hero{
     justify-content: space-between;
     .hero{
+      &__all{
+        padding-top: 50px;
+      }
+      &__all::before{
+        top:-30%;
+        right: -10%;
+        display: inline-block;
+        background-color: $color_blue;
+        content: "";
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        position: absolute;
+      }
       &__content{
+        z-index: 10;
+        position: relative;
         align-self: center;
         max-width: 470px;
         margin-right: em(40);
@@ -19,6 +35,7 @@
         margin-bottom: 3em;
       }
       &__fig, &__img{
+        z-index: 10;
         border-radius: 15px;
         max-width: 450px;
         max-height: 400px;
@@ -30,6 +47,7 @@
         margin-bottom: em(15);
       }
       &__principaltitle{
+        z-index: 10;
         font-size: em(30);
         margin-bottom: em(15);
         line-height: 1.2em;
@@ -88,7 +106,6 @@
       }
     }
   }
-
   &__boutique{
     .boutique{
       &__principaltitle{
@@ -119,7 +136,6 @@
       }
     }
   }
-
   &__contact{
     align-items: center;
     .contact{
@@ -147,12 +163,200 @@
     }
   }
   @media screen and (max-width: 990px){
+    &__hero, &__vendre, &__boutique, .contact__content{
+      padding: 70px 30px 60px;
+      max-width: 780px;
+    }
+    .title{
+      font-size: em(32);
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__intro{
+          margin-bottom: 2em;
+        }
+        &__content{
+          z-index: 10;
+          position: relative;
+          align-self: center;
+          max-width: 400px;
+          margin-right: em(40);
+        }
+        &__part1{
+          margin-bottom: 3em;
+        }
+        &__fig, &__img{
+          max-width: 350px;
+          max-height: 300px;
+        }
+      }
+    }
+    &__vendre{
+      .vendre {
+        &__title{
+          max-width: 190px;
+          height: 185px;
+          min-width: 190px;
+        }
+        &__content{
+          margin-right: em(30);
+        }
+        &__regroup {
+          margin-bottom: em(30);
+        }
+        &__more {
+          margin-right: em(30);
+        }
 
+        &__img {
+          width: 190px;
+          height: 200px;
+        }
+        &__fig, &__fig::before {
+          max-width: 190px;
+        }
+        &__fig{
+          max-height: 200px;
+        }
+      }
+    }
+    &__boutique{
+      .boutique{
+        &__fig, &__img{
+          max-width: 350px;
+          max-height: 300px;
+        }
+        &__img{
+          margin-bottom: 2em;
+        }
+      }
+    }
+    &__contact{
+      .contact{
+        &__content{
+          max-width: 400px;
+        }
+      }
+    }
   }
   @media screen and (max-width: 769px){
-
+    &__hero, &__vendre, &__boutique, .contact__content{
+      padding: 70px 30px 60px;
+      max-width: 450px;
+    }
+    .title{
+      font-size: em(26);
+      line-height: 1.4em;
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__all{
+          flex-direction: column;
+        }
+        &__content{
+          max-width: 400px;
+        }
+        &__part1{
+          margin-bottom: 3em;
+        }
+        &__fig, &__img{
+          max-width: 400px;
+          max-height: 350px;
+        }
+      }
+    }
+    &__vendre{
+      .vendre {
+        &__principaltitle{
+          font-size: em(26);
+        }
+        &__title{
+          height: 185px;
+          min-width: 190px;
+        }
+        &__content{
+          margin-right: em(30);
+        }
+        &__regroup {
+          flex-direction: column;
+          margin-bottom: em(30);
+        }
+        &__wrapper{
+          align-self: end;
+        }
+      }
+    }
+    &__boutique{
+      .boutique{
+        &__content{
+          flex-direction: column;
+        }
+        &__fig, &__img{
+          max-width: 400px;
+          max-height: 350px;
+        }
+      }
+    }
+    &__contact{
+      .contact{
+        &__content{
+          max-width: 400px;
+        }
+      }
+    }
   }
   @media screen and (max-width: 479px){
+
+    &__hero, &__vendre, &__boutique, .contact__content{
+      padding: 70px 30px 60px;
+      max-width: 300px;
+    }
+    &__hero{
+      justify-content: space-between;
+      .hero{
+        &__all{
+          flex-direction: column;
+        }
+        &__content{
+          max-width: 300px;
+        }
+        &__part1{
+          margin-bottom: 3em;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          max-height: 250px;
+        }
+      }
+    }
+    &__vendre{
+      .vendre {
+        &__title{
+          height: 185px;
+          min-width: 190px;
+        }
+      }
+    }
+    &__boutique{
+      .boutique{
+        &__content{
+          flex-direction: column;
+        }
+        &__fig, &__img{
+          max-width: 300px;
+          max-height: 250px;
+        }
+      }
+    }
+    &__contact{
+      .contact{
+        &__content{
+          max-width: 300px;
+        }
+      }
+    }
 
   }
 }
