@@ -2,11 +2,11 @@
 <?php get_header(); ?>
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <main class="soutiens">
-    <h2 class="hidden">Nous soutenir</h2>
+    <h2 aria-level="2" class="hidden">Nous soutenir</h2>
     <section class="soutiens__hero hero flex">
         <div class="hero__all flex">
             <div class="hero__content">
-                <h3 class="hero__principaltitle title"> <?= get_field('soutiens_title');?></h3>
+                <h3 aria-level="3" class="hero__principaltitle title"> <?= get_field('soutiens_title');?></h3>
                 <p class="hero__content"><?= get_field('soutiens_desc');?></p>
             </div>
             <figure class="hero__fig">
@@ -16,7 +16,7 @@
     </section>
 
     <section class="soutiens__singleSoutien singleSoutien">
-        <h3 class="hidden"> Toutes les façons de nous soutenir</h3>
+        <h3 aria-level="3"class="hidden"> Toutes les façons de nous soutenir</h3>
         <div class="singleSoutien__all flex">
             <?php $soutien = new WP_Query([
                 'post_type' => 'soutien',
@@ -30,7 +30,7 @@
                         </figure>
                     <?php endif;?>
                     <div class="singleSoutien__content">
-                        <h4 class="singleSoutien__title title"><?= get_the_title()?></h4>
+                        <h4 aria-level="4" class="singleSoutien__title title"><?= get_the_title()?></h4>
                         <p class="singleSoutien__desc"><?= get_field('soutien_description');?></p>
                     </div>
                 </article>
@@ -41,7 +41,7 @@
     </section>
 
     <section class="soutiens__contact background-blue contact flex column">
-        <h3 class="hidden"> Contactez-nous</h3>
+        <h3 aria-level="3" class="hidden"> Contactez-nous</h3>
         <div class="contact__content flex column">
             <p class="contact__text"><?= get_field('soutiens_contact')?></p>
             <div class="contact__wrapper flex">

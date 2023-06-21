@@ -2,11 +2,11 @@
 <?php get_header(); ?>
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <main class="partenaire">
-    <h2 class="hidden">Nos partenaires</h2>
+    <h2 aria-level="2" class="hidden">Nos partenaires</h2>
     <section class="partenaire__hero hero">
         <div class="hero__all flex">
             <div class="hero__content">
-                <h3 class="hero__principaltitle title"><?= get_field('partenaire_titre') ?></h3>
+                <h3 aria-level="3" class="hero__principaltitle title"><?= get_field('partenaire_titre') ?></h3>
                 <p class="hero__text"><?= get_field('partenaire_accroche') ?></p>
             </div>
             <figure class="hero__fig">
@@ -16,7 +16,7 @@
     </section>
 
     <section class="partenaire__partenaires partenaires">
-        <h3 class="partenaires__principaltitle title">Nos partenaires</h3>
+        <h3 aria-level="3" class="partenaires__principaltitle title">Nos partenaires</h3>
         <div class="partenaires__wrapper flex">
             <?php $partenaire = new WP_Query([
                 'post_type' => 'partenaire',
@@ -26,7 +26,7 @@
                 <?php $tax = get_the_terms( get_the_ID() , 'partenariat' );?>
                 <?php if($tax[0]->slug === 'partenaire'):?>
                     <div class="partenaires__content">
-                        <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
+                        <h4 aria-level="4"  class="hidden"><?= get_field('partenaire_name')?></h4>
                         <figure class="partenaires__fig">
                             <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
                         </figure>
@@ -39,7 +39,7 @@
         </div>
 
     <section class="partenaire__collaborateurs collaborateurs">
-        <h3 class="partenaires__principaltitle title">Nos collaborateurs</h3>
+        <h3 aria-level="3" class="partenaires__principaltitle title">Nos collaborateurs</h3>
         <div class="partenaires__wrapper flex">
         <?php $partenaire = new WP_Query([
             'post_type' => 'partenaire',
@@ -49,7 +49,7 @@
             <?php $tax = get_the_terms( get_the_ID() , 'partenariat' ); ?>
             <?php if($tax[0]->slug === 'collaborateurs'):?>
                 <div class="collaborateurs__content">
-                    <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
+                    <h4 aria-level="4" class="hidden"><?= get_field('partenaire_name')?></h4>
                     <figure class="collaborateurs__fig">
                         <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
                     </figure>
@@ -62,7 +62,7 @@
     </section>
 
     <section class="partenaire__sponsors sponsors">
-        <h3 class="partenaires__principaltitle title">Nos sponsors</h3>
+        <h3 aria-level="3" class="partenaires__principaltitle title">Nos sponsors</h3>
         <?php $partenaire = new WP_Query([
             'post_type' => 'partenaire',
             'posts_per_page' => 100
@@ -71,7 +71,7 @@
             <?php $tax = get_the_terms( get_the_ID() , 'partenariat' ); ?>
             <?php if($tax[0]->slug === 'sponsors'):?>
                 <div class="sponsors__content">
-                    <h4 class="hidden"><?= get_field('partenaire_name')?></h4>
+                    <h4 aria-level="4" class="hidden"><?= get_field('partenaire_name')?></h4>
                     <figure class="sponsors__fig">
                         <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
                     </figure>
@@ -83,7 +83,7 @@
     </section>
 
     <section class="partenaire__contact background-blue contact flex column">
-        <h3 class="hidden"> Contactez-nous</h3>
+        <h3 aria-level="3" class="hidden"> Contactez-nous</h3>
         <div class="contact__content flex column">
             <p class="contact__text"><?= get_field('partenaire_contact')?></p>
             <div class="contact__wrapper flex">

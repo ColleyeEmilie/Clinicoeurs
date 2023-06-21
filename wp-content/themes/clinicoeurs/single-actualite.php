@@ -3,7 +3,7 @@
     <main class="singleActualite">
         <section class="singleActualite__actualite actualite">
             <div class="actualite__all">
-                <h3 class="actualite__principaltitle"><?= get_the_title();?></h3>
+                <h3 aria-level="3" class="actualite__principaltitle"><?= get_the_title();?></h3>
                 <div class="actualite__wrapper flex">
                     <figure class="actualite__fig">
                         <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'actualite__img']); ?>
@@ -22,7 +22,7 @@
 
         <section class="singleActualite__like like">
             <div class="like__regroup flex">
-                <h3 class="like__principaltitle title">Vous pourriez aussi <span class="bold rect rect_yellow">aimer</span></h3>
+                <h3 aria-level="3" class="like__principaltitle title">Vous pourriez aussi <span class="bold rect rect_yellow">aimer</span></h3>
             </div>
             <div class="like__all flex">
                 <?php $actualite = new WP_Query([
@@ -32,7 +32,7 @@
                 if($actualite->have_posts()): while($actualite->have_posts()): $actualite->the_post();?>
                     <a href="<?= get_the_permalink();?>" class="like__link">
                         <article class="like__content content flex">
-                            <h4 class="like__title"><?= get_the_title()?></h4>
+                            <h4 aria-level="4" class="like__title"><?= get_the_title()?></h4>
                             <figure class="like__fig">
                                 <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'like__img']); ?>
                             </figure>

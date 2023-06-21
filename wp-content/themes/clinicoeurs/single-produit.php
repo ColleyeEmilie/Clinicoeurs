@@ -2,11 +2,11 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <?php $photos = get_field('categorie_gallery');?>
 <main class="catgeory">
-    <h2 class="hidden"><?= get_field('categorie_name');?></h2>
+    <h2 aria-level="2" class="hidden"><?= get_field('categorie_name');?></h2>
     <section class="category__hero hero ">
         <div class="hero__all flex">
             <div class="hero__content">
-                <h3 class="hero__principaltitle title"><?= get_field('categorie_name');?></h3>
+                <h3 aria-level="3"class="hero__principaltitle title"><?= get_field('categorie_name');?></h3>
                 <p class="hero__intro"><?= get_field('categorie_intro');?></p>
             </div>
             <figure class="hero__fig">
@@ -16,7 +16,7 @@
     </section>
 
     <section class="category__gallery gallery ">
-    <h3 class="gallery__principaltitle title">Ce que nous <span class="rect bold rect_blue">proposons</span></h3>
+    <h3 aria-level="3"class="gallery__principaltitle title">Ce que nous <span class="rect bold rect_blue">proposons</span></h3>
         <div class="gallery__wrapper flex">
             <?php foreach ($photos as $photo):?>
                 <figure class="gallery__fig slide-in">
@@ -27,7 +27,7 @@
     </section>
 
     <section class="category__contact background-blue contact flex column">
-        <h3 class="hidden"> Contactez-nous</h3>
+        <h3 aria-level="3" class="hidden"> Contactez-nous</h3>
         <div class="contact__content flex column">
             <p class="contact__text"><?= get_field('categorie_contact')?></p>
             <div class="contact__wrapper flex">

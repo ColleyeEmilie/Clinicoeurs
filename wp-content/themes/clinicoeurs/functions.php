@@ -107,7 +107,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Nos actualités',
         'public' => true,
         'menu_position' => 15,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
     register_post_type('service', [
@@ -115,7 +115,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Nos services',
         'public' => true,
         'menu_position' => 15,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
     register_post_type('benevolat', [
@@ -123,7 +123,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Les profils recherchés dans le cadre du bénévolat',
         'public' => true,
         'menu_position' => 15,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-users', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
     register_post_type('produit', [
@@ -131,7 +131,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Les différentes catégories de produits que nous vendons',
         'public' => true,
         'menu_position' => 15,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-store', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
 
@@ -140,7 +140,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Avis',
         'public' => true,
         'menu_position' => 15,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-quote', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
 
@@ -149,7 +149,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Différentes façons de nous soutenir',
         'public' => true,
         'menu_position' => 10,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
 
@@ -158,7 +158,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Notre équipe',
         'public' => true,
         'menu_position' => 10,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-users', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
 
@@ -167,7 +167,7 @@ function clinicoeurs_register_custom_post_types()
         'description' => 'Nos partenaires',
         'public' => true,
         'menu_position' => 15,
-        'menu_icon' => 'dashicons-pets', // https://developer.wordpress.org/resource/dashicons/#pets,
+        'menu_icon' => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail'],
     ]);
 

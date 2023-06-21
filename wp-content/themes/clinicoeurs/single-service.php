@@ -2,16 +2,16 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
     <?php $title = get_the_title()?>
 <main class="service">
-    <h2 class="hidden"><?= get_the_title()?></h2>
+    <h2 aria-level="2" class="hidden"><?= get_the_title()?></h2>
     <section class="service__presentation presentation1">
         <div class="presentation1__all flex">
             <div class="presentation1__wrapper">
                 <div class="presentation1__content">
-                    <h3 class="title presentation1__title--1"><?= get_field('services_titre_1')?></h3>
+                    <h3 aria-level="3"class="title presentation1__title--1"><?= get_field('services_titre_1')?></h3>
                     <p class="presentation1__description--1"><?= get_field('services_qui')?></p>
                 </div>
                 <div class="presentation1__content slide-in">
-                    <h3 class=" title presentation1__title--2"><?= get_field('services_titre_2')?></h3>
+                    <h3 aria-level="3"  class=" title presentation1__title--2"><?= get_field('services_titre_2')?></h3>
                     <p class="presentation1__description--2"><?= get_field('services_que')?></p>
                 </div>
             </div>
@@ -27,14 +27,14 @@
             </figure>
             <div class="presentation2__wrapper">
                 <div class="presentation2__content">
-                    <h3 class=" title presentation2__title--1"><?= get_field('services_titre_3')?></h3>
+                    <h3 aria-level="3" class=" title presentation2__title--1"><?= get_field('services_titre_3')?></h3>
                     <p class="presentation2__description--1"><?= get_field('services_quoi')?></p>
                 </div>
             </div>
         </div>
     </section>
     <section class="service__equipe equipe slide-in tri">
-        <h3 class="equipe__principaltitle title"> Découvrez les membres de <span class="bold rect rect_yellow">notre équipe</span></h3>
+        <h3 aria-level="3" class="equipe__principaltitle title"> Découvrez les membres de <span class="bold rect rect_yellow">notre équipe</span></h3>
         <div class="flex column">
             <div class="equipe__wrapper equipe__wrapper flex">
                 <?php $equipe = new WP_Query([
@@ -58,9 +58,9 @@
         </div>
     </section>
     <section class="service__actualite slide-in tri">
-        <h3 class="tri__principaltitle title "> Articles liés à ce <span class="bold rect rect_yellow">service</span></h3>
+        <h3 aria-level="3" class="tri__principaltitle title "> Articles liés à ce <span class="bold rect rect_yellow">service</span></h3>
         <div class="tri__wrapper actu actu--all flex">
-            <h4 class="hidden">Toutes les actualites</h4>
+            <h4 aria-level="4" class="hidden">Toutes les actualites</h4>
             <?php $actualite = new WP_Query([
                 'post_type' => 'actualite',
                 'posts_per_page' => 100
@@ -70,7 +70,7 @@
                 <?php if($tax[0]->slug === strtolower($title)):?>
                     <a href="<?= get_the_permalink();?>" class="tri__link">
                         <article class="tri__content content flex">
-                            <h5 class="tri__title"><?= get_the_title()?></h5>
+                            <h5 aria-level="5" class="tri__title"><?= get_the_title()?></h5>
                             <figure class="tri__fig">
                                 <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'tri__img']); ?>
                             </figure>
