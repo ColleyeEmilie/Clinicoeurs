@@ -15,11 +15,11 @@
         </div>
     </section>
 
-    <section class="category__gallery gallery">
+    <section class="category__gallery gallery ">
     <h3 class="gallery__principaltitle title">Ce que nous <span class="rect bold rect_blue">proposons</span></h3>
         <div class="gallery__wrapper flex">
             <?php foreach ($photos as $photo):?>
-                <figure class="gallery__fig">
+                <figure class="gallery__fig slide-in">
                     <img srcset="<?= $photo['sizes']['thumbnail']?> 150w, <?= $photo['sizes']['medium']?> 300w,<?= $photo['sizes']['large']?> 600w" sizes="(max-width: 300px) 150px,(max-width: 500px)300px,(max-width: 1200px) 600px" src="<?= $photo['sizes']['thumbnail']?>"  alt="" class="gallery__img">
                 </figure>
             <?php endforeach;?>

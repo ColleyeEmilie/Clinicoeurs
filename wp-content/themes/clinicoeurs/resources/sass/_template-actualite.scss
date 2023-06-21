@@ -10,6 +10,11 @@
   &__actualites{
     padding-top: 130px;
     .actualites{
+      &__img:hover{
+        filter: brightness(0.6);
+        transition-duration: .4s;
+
+      }
       &__wrapper::before{
         top:-30%;
         right: -10%;
@@ -119,6 +124,11 @@
   }
   &__tri{
     .tri{
+      &__img:hover{
+        filter: brightness(0.6);
+        transition-duration: .4s;
+
+      }
       &__link{
         margin-bottom: 1em;
       }

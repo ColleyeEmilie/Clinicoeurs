@@ -37,6 +37,12 @@
     flex-wrap: wrap;
     margin-bottom: 3em;
   }
+  &__contact:hover{
+    border: $color_violet solid 1px;
+    background-color: white;
+    color: $color_violet;
+    transition-duration: .4s;
+  }
 &__contact{
   display: inline-block;
   padding: 15px 25px;

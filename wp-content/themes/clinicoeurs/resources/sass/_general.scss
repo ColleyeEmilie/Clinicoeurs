@@ -72,7 +72,7 @@ a{
   display: inline-block;
   width: 24px;
 }
-.fleche_droite::after{
+.arrow_droite::after{
   content:url('../img/svg/fleche-droite.svg');
   top: 7px;
   z-index: 2;
@@ -81,7 +81,12 @@ a{
   display: inline-block;
   width: 24px;
 }
-.fleche{
+.arrow{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
   width: 60px;
   align-self:center;
   &_bubble-g{
@@ -109,7 +114,7 @@ a{
     z-index: 1;
   }
 }
-.fleche_gauche::after{
+.arrow_gauche::after{
   content:url('../img/svg/fleche-droite.svg');
   rotate: -180deg;
   top: 7px;
@@ -119,7 +124,7 @@ a{
   display: inline-block;
   width: 24px;
 }
-.fleche_droite::after{
+.arrow_droite::after{
   content:url('../img/svg/fleche-droite.svg');
   rotate: 0deg;
   top: 15px;
@@ -178,4 +183,12 @@ a{
   100%{
     transform: translate(0%);
   }
+}
+.js-enabled .slide-in {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.js-enabled .slide-in.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
 }

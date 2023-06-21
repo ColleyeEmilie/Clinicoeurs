@@ -47,7 +47,17 @@
   }
 
   .contact {
+    .form__select{
+      height: 30px;
+    }
+    &__submit:hover{
+      border: $color_blue solid 1px;
+      background-color: white;
+      color: $color_blue;
+      transition-duration: .4s;
+    }
     &__submit{
+      cursor: pointer;
       border:none;
       border-radius: 10px;
       display: inline-block;

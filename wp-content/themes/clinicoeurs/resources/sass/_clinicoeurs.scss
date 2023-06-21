@@ -1,6 +1,6 @@
 .clinicoeurs{
   &__services, &__equipe, &__benevoles, &__benevolat{
-    padding: 70px 70px 80px;
+    padding: 70px 100px 80px;
     max-width: 980px;
     margin: 0 auto;
   }
@@ -76,6 +76,13 @@
       }
     }
     .equipe{
+      &__nom {
+        margin-right: 1em;
+      }
+      &__tax{
+        margin-bottom: 2em;
+      }
+
       &__principaltitle{
         margin-bottom: em(22.23)
       }

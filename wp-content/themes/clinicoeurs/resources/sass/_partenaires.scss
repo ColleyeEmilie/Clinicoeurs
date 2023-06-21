@@ -158,6 +158,17 @@
         margin-bottom: em(40);
       }
 
+      &__wrapper:hover{
+        a{
+          color: $color_yellow;
+        }
+        cursor: pointer;
+        border: $color_yellow solid 1px;
+        background-color: white;
+        color: $color_yellow;
+        transition-duration: .4s;
+      }
+
       &__wrapper {
         height: 50px;
         width: 200px;

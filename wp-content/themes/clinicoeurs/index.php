@@ -19,14 +19,17 @@
         <h3 class="services__principaltitle title">Découvrez nos <span class="bold rect rect_green">différents services</span></h3>
         <div class="services__all flex">
             <?php $services = new WP_Query([
-                'post_type' => 'services',
+                'post_type' => 'service',
                 'posts_per_page' => 4
             ]);
             if($services->have_posts()): while($services->have_posts()): $services->the_post();?>
-                <div class="services__content">
-                    <h4 class="services__title bold"><?= get_the_title() ?></h4>
-                    <p class="services__text"><?= get_field('services_description') ?></p>
-                </div>
+
+                <a href="<?= get_the_permalink(); ?>">
+                    <div class="services__content">
+                        <h4 class="services__title bold"><?= get_the_title() ?></h4>
+                        <p class="services__text"><?= get_field('services_description') ?></p>
+                    </div>
+                </a>
             <?php endwhile; else: ?>
                 <p class="projects__empty">Il n'y a pas de services pour le moment. </p>
             <?php endif; wp_reset_query(); ?>
@@ -120,10 +123,7 @@
 
     <section class="index__avis avis">
         <h3 class="avis__principaltitle title"> Ce qu'ils <span class="bold rect rect_yellow">pensent</span> de nous</h3>
-        <div class="avis__all flex">
-            <div class="fleche">
-                <div class="fleche_gauche"></div><span class="fleche_bubble-g"></span>
-            </div>
+        <div class="avis__all">
             <div class="avis__all flex">
                 <?php $avis = new WP_Query([
                     'post_type' => 'avis',
@@ -138,22 +138,19 @@
                     <p class="projects__empty">Il n'y a aucun avis pour le moment.  </p>
                 <?php endif; wp_reset_query(); ?>
             </div>
-            <div class="fleche">
-                <div class="fleche_droite"></div><span class="fleche_bubble-d"></span>
-            </div>
         </div>
     </section>
 
     <section class="index__partenaires partenaires">
         <h3 class="hidden">Nos partenaires</h3>
-        <div class="partenaires__slider--wrap flex">
-            <div class="partenaires__slider flex">
+        <div class="slider">
+            <div class="slider-container">
                 <?php $partenaire = new WP_Query([
                     'post_type' => 'partenaire',
                     'posts_per_page' => 100
                 ]);
                 if($partenaire->have_posts()): while($partenaire->have_posts()): $partenaire->the_post();?>
-                    <div class="partenaires__content">
+                    <div class="index__logo">
                         <h4 class="hidden"><?= get_field('partenaire_name') ?></h4>
                         <figure class="partenaires__fig">
                             <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>

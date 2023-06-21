@@ -18,11 +18,11 @@
             <h3 class="services__principaltitle title">Que <span class="bold rect rect_green">faisons-nous ?</span></h3>
             <div class="services__all flex">
                 <?php $services = new WP_Query([
-                    'post_type' => 'services',
+                    'post_type' => 'service',
                     'posts_per_page' => 100
                 ]);
                 if($services->have_posts()): while($services->have_posts()): $services->the_post();?>
-                    <div class="services__content">
+                    <div class="services__content slide-in">
                         <h4 class="services__title bold"><?= get_the_title() ?></h4>
                         <p class="services__text"><?= get_field('services_description') ?></p>
                     </div>
@@ -34,28 +34,84 @@
         <section class="clinicoeurs__equipe background-blue tri">
             <h3 class="equipe__principaltitle title"> Notre équipe</h3>
             <?php $types = get_terms(['taxonomy' => 'section']); ?>
-
-            <div class="flex column">
-                <div class="equipe__wrapper equipe__wrapper--clinicoeur flex">
+            <ul class="equipe__tax flex">
+                <li class="equipe__nom">Tous</li>
+                <?php foreach($types as $type):?>
+                <li class="equipe__nom"><?=$type->name?></li>
+                <?php endforeach;?>
+            </ul>
+            <div class="flex column slide-in">
+                <div class="equipe__wrapper equipe__wrapper--all flex">
                     <?php $equipe = new WP_Query([
                         'post_type' => 'equipe',
                         'posts_per_page' => 100
                     ]);
                     if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
                         <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
-                        <div class="equipe__content">
-                            <figure class="equipe__fig">
-                                <?= get_the_post_thumbnail(null, 'equipe_thumbnail', ['class' => 'equipe__img']); ?>
-                            </figure>
-                            <p class="equipe__name"><?= get_field('equipe_name')?></p>
-                        </div>
+                        <?php require ('parts/equipe.php');?>
+                    <?php endwhile; else: ?>
+                        <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
+                    <?php endif; wp_reset_query(); ?>
+                </div>
+                <div class="equipe__wrapper hidden equipe__wrapper--cliniclowns flex">
+                    <?php $equipe = new WP_Query([
+                        'post_type' => 'equipe',
+                        'posts_per_page' => 100
+                    ]);
+                    if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
+                        <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
+                        <?php if($tax[0]->slug === 'cliniclowns'):?>
+                        <?php require ('parts/equipe.php');?>
+                        <?php endif;?>
+                    <?php endwhile; else: ?>
+                        <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
+                    <?php endif; wp_reset_query(); ?>
+                </div>
+                <div class="equipe__wrapper hidden equipe__wrapper--clinicoeurs flex">
+                    <?php $equipe = new WP_Query([
+                        'post_type' => 'equipe',
+                        'posts_per_page' => 100
+                    ]);
+                    if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
+                        <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
+                        <?php if($tax[0]->slug === 'clinicoeurs'):?>
+                            <?php require ('parts/equipe.php');?>
+                        <?php endif;?>
+                    <?php endwhile; else: ?>
+                        <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
+                    <?php endif; wp_reset_query(); ?>
+                </div>
+                <div class="equipe__wrapper hidden equipe__wrapper--clinisnoezs flex">
+                    <?php $equipe = new WP_Query([
+                        'post_type' => 'equipe',
+                        'posts_per_page' => 100
+                    ]);
+                    if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
+                        <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
+                        <?php if($tax[0]->slug === 'clinisnoezs'):?>
+                            <?php require ('parts/equipe.php');?>
+                        <?php endif;?>
+                    <?php endwhile; else: ?>
+                        <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
+                    <?php endif; wp_reset_query(); ?>
+                </div>
+                <div class="equipe__wrapper hidden equipe__wrapper--clinitalents flex">
+                    <?php $equipe = new WP_Query([
+                        'post_type' => 'equipe',
+                        'posts_per_page' => 100
+                    ]);
+                    if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
+                        <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
+                        <?php if($tax[0]->slug === 'clinitalents'):?>
+                            <?php require ('parts/equipe.php');?>
+                        <?php endif;?>
                     <?php endwhile; else: ?>
                         <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
                     <?php endif; wp_reset_query(); ?>
                 </div>
             </div>
         </section>
-        <section class="clinicoeurs__benevoles benevoles">
+        <section class="clinicoeurs__benevoles benevoles slide-in">
             <h3 class="benevoles__principaltitle title">Nous recherchons des <span class="bold rect rect_blue">bénévoles !</span></h3>
             <div class="benevoles__all flex">
                 <?php $profils = new WP_Query([
@@ -89,7 +145,7 @@
                 <?php endif; wp_reset_query(); ?>
             </div>
         </section>
-        <section class="clinicoeurs__benevolat benevolat">
+        <section class="clinicoeurs__benevolat benevolat slide-in">
             <div class="benevolat__wrapper flex">
                 <div class="benevolat__content flex column">
                     <h3 class="benevolat__title title"><?= get_field('clinicoeurs_benevole_titre')?></h3>

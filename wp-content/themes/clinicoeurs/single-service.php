@@ -10,7 +10,7 @@
                     <h3 class="title presentation1__title--1"><?= get_field('services_titre_1')?></h3>
                     <p class="presentation1__description--1"><?= get_field('services_qui')?></p>
                 </div>
-                <div class="presentation1__content">
+                <div class="presentation1__content slide-in">
                     <h3 class=" title presentation1__title--2"><?= get_field('services_titre_2')?></h3>
                     <p class="presentation1__description--2"><?= get_field('services_que')?></p>
                 </div>
@@ -20,7 +20,7 @@
             </figure>
         </div>
     </section>
-    <section class="service__presentation presentation2 flex">
+    <section class="service__presentation presentation2 slide-in flex">
         <div class="presentation2__all flex">
             <figure class="presentation2__fig">
                 <img src="<?= get_field('services_img_2')?>" alt="" class="presentation2__img">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </section>
-    <section class="service__equipe equipe tri">
+    <section class="service__equipe equipe slide-in tri">
         <h3 class="equipe__principaltitle title"> Découvrez les membres de <span class="bold rect rect_yellow">notre équipe</span></h3>
         <div class="flex column">
             <div class="equipe__wrapper equipe__wrapper flex">
@@ -57,8 +57,8 @@
             </div>
         </div>
     </section>
-    <section class="service__actualite tri">
-        <h3 class="tri__principaltitle title "> Articles liés à ce <span class="bold rect rect_yellow">services</span></h3>
+    <section class="service__actualite slide-in tri">
+        <h3 class="tri__principaltitle title "> Articles liés à ce <span class="bold rect rect_yellow">service</span></h3>
         <div class="tri__wrapper actu actu--all flex">
             <h4 class="hidden">Toutes les actualites</h4>
             <?php $actualite = new WP_Query([
