@@ -32,16 +32,6 @@
      <section class="actualite__tri tri">
         <h3 class="tri__principaltitle title "> Rechercher un article par <span class="bold rect rect_yellow">catégorie </span></h3>
         <?php $types = get_terms(['taxonomy' => 'type']); ?>
-        <ul class="tri__items flex">
-            <li class="tri__item">
-                <a class="bold" href="#">Tous les articles</a>
-            </li>
-            <?php foreach($types as $type): ?>
-                <li class="tri__item actualite--tax <?php echo $type->name; ?>">
-                    <a href="#"><?php echo $type->name; ?></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
         <div class="tri__wrapper actu actu--all flex">
             <h4 class="hidden">Toutes les actualites</h4>
             <?php $actualite = new WP_Query([

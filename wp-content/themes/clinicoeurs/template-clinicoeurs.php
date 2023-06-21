@@ -34,16 +34,8 @@
         <section class="clinicoeurs__equipe background-blue tri">
             <h3 class="equipe__principaltitle title"> Notre équipe</h3>
             <?php $types = get_terms(['taxonomy' => 'section']); ?>
-            <ul class="tri__items flex">
-                <?php foreach($types as $type): ?>
-                    <li class="tri__item <?= $type->name?>">
-                        <a href="<?= get_term_link($type) ?>"><?php echo $type->name; ?></a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
 
             <div class="flex column">
-                <h4>Clinicoeurs</h4>
                 <div class="equipe__wrapper equipe__wrapper--clinicoeur flex">
                     <?php $equipe = new WP_Query([
                         'post_type' => 'equipe',
