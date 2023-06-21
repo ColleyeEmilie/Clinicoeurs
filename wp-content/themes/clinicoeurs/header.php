@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <meta name="description" content="Site pour les l'ASBL des clinicoeurs localisés à Vielsalm."/>
 
     <title><?= get_the_title(); ?></title>
