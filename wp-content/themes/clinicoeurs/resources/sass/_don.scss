@@ -1,13 +1,14 @@
 .soutiens{
-  &__hero, .singleSoutien__all, .contact__content{
+  &__hero, .contact__content, &__singleSoutien{
     padding: 70px 70px 80px;
-    max-width: 980px;
+    max-width: 1080px;
     margin: 0 auto;
   }
   &__title{
     font-size: em(36);
   }
   &__hero{
+    padding-bottom: 0;
     justify-content: space-between;
     .hero{
       &__all{
@@ -270,6 +271,9 @@
     }
   }
   @media screen and (max-width: 479px){
+    .soutiens__singleSoutien{
+      padding: 70px 10px 80px;
+    }
     &__hero, .singleSoutien__all, .contact__content{
       padding-right: 20px;
       padding-left: 20px;

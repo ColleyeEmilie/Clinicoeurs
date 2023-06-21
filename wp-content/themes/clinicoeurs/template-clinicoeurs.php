@@ -14,7 +14,6 @@
                 </figure>
             </div>
         </section>
-
         <section class="clinicoeurs__services services">
             <h3 class="services__principaltitle title">Que <span class="bold rect rect_green">faisons-nous ?</span></h3>
             <div class="services__all flex">
@@ -37,7 +36,7 @@
             <?php $types = get_terms(['taxonomy' => 'section']); ?>
             <ul class="tri__items flex">
                 <?php foreach($types as $type): ?>
-                    <li class="tri__item">
+                    <li class="tri__item <?= $type->name?>">
                         <a href="<?= get_term_link($type) ?>"><?php echo $type->name; ?></a>
                     </li>
                 <?php endforeach; ?>

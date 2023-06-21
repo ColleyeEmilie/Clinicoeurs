@@ -1,5 +1,5 @@
 .service{
-  &__presentation, &__equipe{
+  &__presentation, &__equipe, &__actualite{
     padding: 70px 70px 80px;
     max-width: 980px;
     margin: 0 auto;
@@ -102,13 +102,80 @@
       }
     }
   }
+  &__actualite{
+      .tri{
+        &__link{
+          margin-bottom: 1em;
+        }
+        &__item{
+          margin-right: 1em;
+          margin-bottom: 1em;
+        }
+        &__content{
+          align-items: flex-end;
+        }
+        &__principaltitle{
+          margin-bottom: em(22.23)
+        }
+        &__wrapper{
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        &__img, &__fig{
+          max-height: 200px;
+          min-height: 200px;
+          max-width: 250px;
+          min-width: 250px;
+        }
+        &__img{
+          object-fit: cover;
+        }
+        &__title{
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-family: "p22-mackinac-pro", serif;
+          color:white;
+          position: absolute;
+          height: auto;
+          min-width: 220px;
+          z-index: 11;
+          margin-left: 1em;
+          margin-bottom: 1em;
+          font-size: em(20);
+          max-width: 230px;
+        }
+        &__fig{
+          position: relative;
+        }
+        &__fig::before{
+          content: '';
+          z-index: 10;
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          background: linear-gradient(0deg, $color_font, rgba(8, 28, 21, 0));
+        }
+      }
+  }
   @media screen and (max-width: 990px){
-    &__presentation, &__equipe{
+    &__presentation, &__equipe, &__actualite{
       padding: 70px 30px 60px;
       max-width: 780px;
     }
     .title{
       font-size: em(32);
+    }
+    &__actualite{
+      .tri{
+        &__img, &__fig{
+          max-height: 150px;
+          min-height: 150px;
+          max-width: 230px;
+          min-width: 230px;
+        }
+      }
     }
     &__presentation{
       .presentation1{
@@ -135,12 +202,26 @@
     }
   }
   @media screen and (max-width: 769px){
-    &__presentation, &__equipe{
+    &__presentation, &__equipe,  &__actualite{
       padding: 70px 20px 30px;
       max-width: 450px;
     }
     .title{
       font-size: em(26);
+    }
+    &__actualite{
+      .tri{
+        &__items{
+          flex-wrap: wrap;
+          margin-bottom: 1em;
+        }
+        &__img, &__fig{
+          max-height: 160px;
+          min-height: 160px;
+          max-width: 210px;
+          min-width: 210px;
+        }
+      }
     }
     &__presentation{
       .presentation1{
@@ -182,13 +263,27 @@
     }
   }
   @media screen and (max-width: 479px){
-    &__presentation, &__equipe{
+    &__presentation, &__equipe, &__actualite{
       padding: 70px 20px 30px;
       max-width: 300px;
     }
     .title{
       font-size: em(26);
       line-height: 1.6em;
+    }
+    &__actualite{
+      .tri{
+        &__items{
+          flex-wrap: wrap;
+          margin-bottom: 1em;
+        }
+        &__img, &__fig{
+          max-width: 300px;
+          min-width: 300px;
+          max-height: 150px;
+          min-height: 150px;
+        }
+      }
     }
     &__presentation{
       .presentation1{

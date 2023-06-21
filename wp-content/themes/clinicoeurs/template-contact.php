@@ -3,25 +3,24 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
 <main class="layout__contact">
-    <section aria-labelledby="contact" class="contact">
-        <h2 class="contact__title title" aria-level="2"><?= get_the_title(); ?></h2>
-        <div class="asbl_contact">
-            <div id="contact asbl">
+    <section aria-labelledby="contact" class="contact flex">
+        <h2 class="contact__title title hidden" aria-level="2"><?= get_the_title(); ?></h2>
+        <div class="asbl__contact flex">
+            <h3 class="asbl__title title" aria-level="3">Contactez-nous !</h3>
+            <div id="contact" class="contact__asbl flex">
                 <section aria-labelledby="coordinate" class="coordinates" itemscope itemtype="https://schema.org/Person">
-                    <h3 id="coordinate" class="coordinates__title hidden" aria-level="3"><?= 'Nos coordonnées' ?></h3>
+                    <h4 id="coordinate" class="coordinates__title hidden" aria-level="4"><?= 'Nos coordonnées' ?></h4>
                     <div class="coordinates__content">
                         <section aria-labelledby="mail" class="coordinates__mail">
-                            <h4 id="mail" class="coordinates__title bold title" aria-level="4"><?= 'Mail' ?></h4>
-                            <p class="coordinates__mail mail" ><a href="mailto:<?= get_field('mail')?>" itemprop="email"><?= get_field('mail')?></a></p>
+                            <h5 id="mail" class="coordinates__title bold title" aria-level="5"><?= 'Mail' ?></h5>
+                            <p class="coordinates__mail mail" ><a href="mailto:<?= get_field('contact_email')?>" itemprop="email"><?= get_field('contact_email')?></a></p>
                         </section>
                         <section aria-labelledby="telephone" class="coordinates__phone">
-                            <h4 id="telephone" class="coordinates__title bold title" aria-level="4"><?= 'Téléphone' ?></h4>
-                            <p class="coordinates__mail phone" itemprop="telephone"><?= get_field('phone')?></p>
+                            <h5 id="telephone" class="coordinates__title bold title" aria-level="5"><?= 'Téléphone' ?></h5>
+                            <p class="coordinates__mail phone" itemprop="telephone"><?= get_field('contact_telephone')?></p>
                         </section>
                     </div>
                 </section>
-
-
                 <section aria-labelledby="contact" class="contact__content">
                     <h3 id="contact" class="contact__title hidden" aria-level="3">Contactez-moi</h3>
                     <div class="page__form">
@@ -95,24 +94,36 @@
                         <?php endif; ?>
                     </div>
                 </section>
+            </div>
         </div>
-        <div class="boutique__contact">
-            <section aria-labelledby="mail" class="coordinates__mail">
-                <h4 id="mail" class="coordinates__title bold title" aria-level="4"><?= 'Mail' ?></h4>
-                <p class="coordinates__mail mail" ><a href="mailto:<?= get_field('mail')?>" itemprop="email"><?= get_field('mail')?></a></p>
-            </section>
-            <section aria-labelledby="telephone" class="coordinates__phone">
-                <h4 id="telephone" class="coordinates__title bold title" aria-level="4"><?= 'Téléphone' ?></h4>
-                <p class="coordinates__mail phone" itemprop="telephone"><?= get_field('phone')?></p>
-            </section>
-            <section aria-labelledby="address" class="coordinates__address" itemscope itemtype="https://schema.org/PostalAddress">
-                <h4 id="address" class="coordinates__title bold title" aria-level="4"><?= 'Adresse' ?></h4>
-                <p itemprop="streetAddress" class="coordinates__adress">Rue du canal, 18</p>
-                <p itemprop="postalCode" class="coordinates__postal">4684, HACCOURT</p>
-            </section>
+        <div class="contact__boutique boutique flex">
+            <h3 class="asbl__title title" aria-level="3">Notre boutique</h3>
+            <div class="boutique__content">
+                <div class="boutique__map">
+                    <figure class="boutique__fig">
+                        <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'boutique__img']); ?>
+                    </figure>
+                </div>
+                <div class="coordinates__infos">
+                    <section aria-labelledby="mail" class="coordinates__mail">
+                        <h4 id="mail" class="coordinates__title bold title" aria-level="4"><?= 'Mail' ?></h4>
+                        <p class="coordinates__mail mail" ><a href="mailto:<?= get_field('contact_email')?>" itemprop="email"><?= get_field('contact_email')?></a></p>
+                    </section>
+                    <section aria-labelledby="telephone" class="coordinates__phone">
+                        <h4 id="telephone" class="coordinates__title bold title" aria-level="4"><?= 'Téléphone' ?></h4>
+                        <p class="coordinates__mail phone" itemprop="telephone"><?= get_field('contact_telephone')?></p>
+                    </section>
+                    <section aria-labelledby="address" class="coordinates__address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <h4 id="address" class="coordinates__title bold title" aria-level="4"><?= 'Adresse' ?></h4>
+                        <p itemprop="streetAddress" class="coordinates__adress"><?= get_field('contact_adresse')?></p>
+                    </section>
+                    <section class="coordinates__horaire" >
+                        <h4 id="horaire" class="coordinates__title bold title" aria-level="4">Horaire d'ouverture</h4>
+                        <p  class="coordinates__horaire"><?= get_field('contact_horaire')?></p>
+                    </section>
+                </div>
+            </div>
         </div>
-    </section>
-    </div>
     </section>
 </main>
 <?php endwhile; endif; ?>

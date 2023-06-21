@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    <section class="soutiens__singleSoutien background-blue singleSoutien">
+    <section class="soutiens__singleSoutien singleSoutien">
         <h3 class="hidden"> Toutes les façons de nous soutenir</h3>
         <div class="singleSoutien__all flex">
             <?php $soutien = new WP_Query([
