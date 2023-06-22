@@ -6,3 +6,5 @@ Retrouvez le lien vers mon wireframe ainsi que mes persona [ici](https://miro.co
 
 Retrouvez le lien vers mon design réalisé sur figma ici [ici](https://www.figma.com/file/2WVp3NgOziod0nsgChDKGC/Untitled?type=design&node-id=0%3A1&mode=design&t=gVsBACxzWiH3o1so-1)
 
+Retrouvez [ici](https://pin.it/R3ap9YG) le lien vers mon moodboard
+
