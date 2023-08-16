@@ -38,50 +38,6 @@
     </section>
         </div>
 
-    <section class="partenaire__collaborateurs collaborateurs">
-        <h3 aria-level="3" class="partenaires__principaltitle title">Nos collaborateurs</h3>
-        <div class="partenaires__wrapper flex">
-        <?php $partenaire = new WP_Query([
-            'post_type' => 'partenaire',
-            'posts_per_page' => 100
-        ]);
-        if($partenaire->have_posts()): while($partenaire->have_posts()): $partenaire->the_post();?>
-            <?php $tax = get_the_terms( get_the_ID() , 'partenariat' ); ?>
-            <?php if($tax[0]->slug === 'collaborateurs'):?>
-                <div class="collaborateurs__content">
-                    <h4 aria-level="4" class="hidden"><?= get_field('partenaire_name')?></h4>
-                    <figure class="collaborateurs__fig">
-                        <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
-                    </figure>
-                </div>
-            <?php endif;?>
-        <?php endwhile; else: ?>
-            <p class="partenaire__empty">Il n'y a aucune actualité pour le moment.  </p>
-        <?php endif; wp_reset_query(); ?>
-        </div>
-    </section>
-
-    <section class="partenaire__sponsors sponsors">
-        <h3 aria-level="3" class="partenaires__principaltitle title">Nos sponsors</h3>
-        <?php $partenaire = new WP_Query([
-            'post_type' => 'partenaire',
-            'posts_per_page' => 100
-        ]);
-        if($partenaire->have_posts()): while($partenaire->have_posts()): $partenaire->the_post();?>
-            <?php $tax = get_the_terms( get_the_ID() , 'partenariat' ); ?>
-            <?php if($tax[0]->slug === 'sponsors'):?>
-                <div class="sponsors__content">
-                    <h4 aria-level="4" class="hidden"><?= get_field('partenaire_name')?></h4>
-                    <figure class="sponsors__fig">
-                        <?= get_the_post_thumbnail(null, 'partenaire_thumbnail', ['class' => 'partenaires__img']); ?>
-                    </figure>
-                </div>
-            <?php endif;?>
-        <?php endwhile; else: ?>
-            <p class="partenaire__empty">Il n'y a aucune actualité pour le moment.  </p>
-        <?php endif; wp_reset_query(); ?>
-    </section>
-
     <section class="partenaire__contact background-blue contact flex column">
         <h3 aria-level="3" class="hidden"> Contactez-nous</h3>
         <div class="contact__content flex column">

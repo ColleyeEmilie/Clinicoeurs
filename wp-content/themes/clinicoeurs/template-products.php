@@ -25,12 +25,12 @@
         <div class="vendre__regroup flex">
             <h3 aria-level="3" class="vendre__principaltitle title">Découvrez ce que nous <span class="bold rect rect_yellow">vendons</span></h3>
         </div>
+        <div class="vendre__produits flex">
         <?php $produit = new WP_Query([
             'post_type' => 'produit',
             'posts_per_page' => 100
         ]);
         if($produit->have_posts()): while($produit->have_posts()): $produit->the_post();?>
-            <div>
                 <a href="<?= get_the_permalink();?>" class="vendre__link flex">
                     <article class="vendre__content ">
                         <h4 aria-level="4" class="vendre__title flex"><?= get_the_title()?></h4>
@@ -39,10 +39,11 @@
                         </figure>
                     </article>
                 </a>
-            </div>
         <?php endwhile; else: ?>
+
             <p class="projects__empty">Il n'y a aucune façon de nous soutenir pour le moment. </p>
         <?php endif; wp_reset_query(); ?>
+        </div>
     </section>
 
     <section class="products__boutique boutique">
