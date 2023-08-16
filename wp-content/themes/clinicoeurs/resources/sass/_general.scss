@@ -59,10 +59,11 @@ a{
   text-transform: uppercase;
 
 }
-.more:hover{
-  font-weight: bolder;
+.more:hover::after{
+  transform: translateX(3px);
 }
 .more::after{
+  transition: transform 0.3s ease;
   content:url('../img/svg/fleche-droite.svg');
   top: 7px;
   z-index: 2;
@@ -167,13 +168,6 @@ a{
   height: 25px;
   border-radius: 50%;
   position: relative;
-}
-@keyframes fleche{
-  0%{transform: rotate(0)}
-  25%{transform: rotate(10deg)}
-  50%{transform: rotate(0deg)}
-  75%{transform: rotate(-10deg)}
-  100%{transform: rotate(0deg)}
 }
 @keyframes scrollTxt {
   0%{
