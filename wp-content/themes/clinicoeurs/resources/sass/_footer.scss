@@ -44,6 +44,7 @@
     transition-duration: .4s;
   }
 &__contact{
+  border: $color_violet solid 1px;
   display: inline-block;
   padding: 15px 25px;
   background-color: $color_violet;

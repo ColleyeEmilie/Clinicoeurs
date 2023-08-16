@@ -32,7 +32,7 @@
 .header {
   a:hover{
     font-weight: bolder;
-    transition-duration: .4s;
+
   }
   color:$color_font;
   .menu{
@@ -50,6 +50,8 @@
     overflow: hidden;
   }
   li a {
+    max-width: 124px;
+    transition-duration: .4s;
     display: block;
     padding: 20px 20px;
     text-decoration: none;

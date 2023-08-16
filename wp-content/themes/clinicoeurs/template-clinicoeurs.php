@@ -54,62 +54,6 @@
                             <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
                         <?php endif; wp_reset_query(); ?>
                     </div>
-                    <div class="equipe__wrapper hidden equipe__wrapper--cliniclowns flex">
-                        <?php $equipe = new WP_Query([
-                            'post_type' => 'equipe',
-                            'posts_per_page' => 100
-                        ]);
-                        if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
-                            <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
-                            <?php if($tax[0]->slug === 'cliniclowns'):?>
-                                <?php require ('parts/equipe.php');?>
-                            <?php endif;?>
-                        <?php endwhile; else: ?>
-                            <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
-                        <?php endif; wp_reset_query(); ?>
-                    </div>
-                    <div class="equipe__wrapper hidden equipe__wrapper--clinicoeurs flex">
-                        <?php $equipe = new WP_Query([
-                            'post_type' => 'equipe',
-                            'posts_per_page' => 100
-                        ]);
-                        if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
-                            <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
-                            <?php if($tax[0]->slug === 'clinicoeurs'):?>
-                                <?php require ('parts/equipe.php');?>
-                            <?php endif;?>
-                        <?php endwhile; else: ?>
-                            <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
-                        <?php endif; wp_reset_query(); ?>
-                    </div>
-                    <div class="equipe__wrapper hidden equipe__wrapper--clinisnoezs flex">
-                        <?php $equipe = new WP_Query([
-                            'post_type' => 'equipe',
-                            'posts_per_page' => 100
-                        ]);
-                        if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
-                            <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
-                            <?php if($tax[0]->slug === 'clinisnoezs'):?>
-                                <?php require ('parts/equipe.php');?>
-                            <?php endif;?>
-                        <?php endwhile; else: ?>
-                            <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
-                        <?php endif; wp_reset_query(); ?>
-                    </div>
-                    <div class="equipe__wrapper hidden equipe__wrapper--clinitalents flex">
-                        <?php $equipe = new WP_Query([
-                            'post_type' => 'equipe',
-                            'posts_per_page' => 100
-                        ]);
-                        if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
-                            <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
-                            <?php if($tax[0]->slug === 'clinitalents'):?>
-                                <?php require ('parts/equipe.php');?>
-                            <?php endif;?>
-                        <?php endwhile; else: ?>
-                            <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
-                        <?php endif; wp_reset_query(); ?>
-                    </div>
                 </div>
             </div>
         </section>
