@@ -32,7 +32,7 @@
                             <div class="success">
                                 <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
                             </div>
-                        <?php else: ?>
+                        <?php endif; ?>
                             <?php if($errors): ?>
                                 <div class="error">
                                     <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
