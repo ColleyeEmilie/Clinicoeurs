@@ -24,10 +24,15 @@
             ]);
             if($services->have_posts()): while($services->have_posts()): $services->the_post();?>
 
-                <a href="<?= get_the_permalink(); ?>">
+                <a href="<?= get_the_permalink(); ?>" class="services__link">
                     <div class="services__content">
                         <h4 class="services__title bold"><?= get_the_title() ?></h4>
                         <p class="services__text"><?= get_field('services_description') ?></p>
+                    </div>
+                    <div class="go-corner">
+                        <div class="go-arrow">
+                            →
+                        </div>
                     </div>
                 </a>
             <?php endwhile; else: ?>
