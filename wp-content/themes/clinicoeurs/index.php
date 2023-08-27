@@ -7,7 +7,7 @@
             <div class="hero__regroup flex">
                 <h3 aria-level="3" class="hero__title title">Apportez un peu de <span class="bold">légèreté</span> et de <span class="bold">joie</span> dans votre quotidien !</h3>
                 <p class="hero__description"><?= get_field('accueil_description')?></p>
-                <a href="https://clinicoeurs.emilie-colleye.com/fr/clinicoeurs/" class="hero__mission"><span class="bold hero__mission flex">Notre mission</span></a>
+                <a href="https://clinicoeurs.emilie-colleye.com/fr/clinicoeurs/" class="hero__mission"><div class="hero__button"></div><span class="bold hero__mission--text flex">Notre mission</span></a>
             </div>
             <figure class="hero__fig">
                 <?= get_the_post_thumbnail(null, 'clinicoeurs_thumbnail', ['class' => 'hero__img']); ?>

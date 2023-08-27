@@ -59,23 +59,34 @@
       &__content{
         justify-content: center;
       }
+      &__button{
+        z-index: -1;
+        background-color: white;
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);
+        position: absolute;
+        border-radius: 50%;
+        padding: 20px;
+        width: 25px;
+        height: 25px;
+        transition: ease-in-out 0.5s;
+      }
+      &__mission:hover .hero__button{
+        width: 200px;
+        border-radius: 10px;
+      }
+
       &__mission{
-        span{
+        &--text{
+          padding: 20px;
           align-items: center;
         }
-        :hover::before{
-          transform: scale(1.1);
-        }
-        ::before{
-          background-color: white;
-          padding: 20px;
+        &--text::before{
           width: 25px;
           height: 25px;
           border-radius: 50%;
           display: inline-block;
           content:url('../img/svg/fleche-droite.svg');
-          margin-right: em(20);
-          box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.1);
+          margin-right: 2em;
         }
       }
       &__description{
