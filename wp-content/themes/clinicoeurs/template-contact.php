@@ -67,14 +67,7 @@
 
                                     <div class="contact__field">
                                         <label for="subject" class="field__label">Sujet</label>
-                                        <select name="subject" id="subject" class="form__select">
-                                                <option class="form__option" value="devenir_partenaire">Devenir partenaire</option>
-                                                <option class="form__option" value="benevolat">Benevolat</option>
-                                                <option class="form__option" value="soutenir">Soutenir l'ASBL</option>
-                                                <option class="form__option" value="commande">Passer une commande dans la boutique</option>
-                                                <option class="form__option" value="infos">Demande d'informations</option>
-                                            <option class="form__option" value="autres">Autre</option>
-                                        </select>
+                                        <input  name="subject" id="email" class="field__input" />
                                     </div>
 
                                     <div class="contact__field">

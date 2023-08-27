@@ -152,7 +152,7 @@
       &__wrapper{
         height: 50px;
         width: 200px;
-        border-radius: 15px;
+        border-radius: 10px;
         background-color: $color_yellow;
         justify-content: center;
       }
@@ -192,7 +192,7 @@
         &__article:nth-child(1), &__article:nth-child(2), &__article:nth-child(3){
           margin-bottom: em(40);
           min-height: 100px;
-          border-radius: 15px;
+          border-radius: 10px;
           padding: 20px 20px;
           min-width: 270px;
           max-width: 270px;
@@ -252,7 +252,7 @@
         &__article:nth-child(1), &__article:nth-child(2), &__article:nth-child(3){
           margin-bottom: em(40);
           min-height: 100px;
-          border-radius: 15px;
+          border-radius: 10px;
           padding: 20px 20px;
           min-width: 360px;
           max-width: 360px;

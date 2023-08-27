@@ -36,7 +36,7 @@
       }
       &__fig, &__img{
         z-index: 10;
-        border-radius: 15px;
+        border-radius: 10px;
         max-width: 450px;
         max-height: 400px;
       }
@@ -82,7 +82,7 @@
         width: 220px;
         height: 230px;
         object-fit: cover;
-        border-radius: 15px;
+        border-radius: 10px;
       }
       &__fig::before {
         margin-top: 115px;
@@ -94,13 +94,13 @@
         display: block;
         position: absolute;
         background-color: white;
-        border-radius: 0 0 15px 15px;
+        border-radius: 0 0 10px 10px;
       }
       &__fig, &__fig::before {
         max-width: 220px;
       }
       &__fig{
-        border-radius: 15px;
+        border-radius: 10px;
         max-height: 230px;
         box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.05);
       }
@@ -114,7 +114,7 @@
         line-height: 1.2em;
       }
       &__fig, &__img{
-        border-radius: 15px;
+        border-radius: 10px;
         max-width: 450px;
         max-height: 400px;
       }
