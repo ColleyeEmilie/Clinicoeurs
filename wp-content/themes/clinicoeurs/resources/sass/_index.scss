@@ -429,6 +429,10 @@
   }
   .index__logo{
     margin-right: 1em;
+    margin-bottom: 1em;
+  }
+  .slider-container{
+    flex-wrap: wrap;
   }
 
 
@@ -462,8 +466,6 @@
         }
         &__content{
           padding: 20px 20px;
-          min-width: 300px;
-          max-width: 300px;
         }
         &__title{
           font-size: em(20);
@@ -621,8 +623,6 @@
         &__content{
           margin-bottom: em(20);
           padding: 20px 20px;
-          min-width: 300px;
-          max-width: 300px;
         }
         &__title{
           font-size: em(18);
@@ -754,9 +754,8 @@
         }
         &__content{
           margin-bottom: em(20);
-          padding: 10px;
-          min-width: 100%;
-          max-width: 100%;
+          padding: 30px 20px;
+          min-width: inherit;
         }
       }
     }
@@ -847,8 +846,7 @@
         }
         &__content{
           padding: 20px 30px;
-          min-width: 100px;
-          max-width: 100px;
+          min-width: inherit;
         }
       }
     }
