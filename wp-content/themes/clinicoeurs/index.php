@@ -149,7 +149,7 @@
     <section class="index__partenaires partenaires">
         <h3 aria-level="3" class="hidden">Nos partenaires</h3>
         <div class="slider">
-            <div class="slider-container">
+            <div class="slider-container flex">
                 <?php $partenaire = new WP_Query([
                     'post_type' => 'partenaire',
                     'posts_per_page' => 100

@@ -21,7 +21,7 @@
 
 
 .index{
-  &__services, .vendre, &__soutiens, .actualites, .hero__content, &__avis{
+  .slider,&__services, .vendre, &__soutiens, .actualites, .hero__content, &__avis{
     padding: 70px 70px 80px;
     max-width: 980px;
     margin: 0 auto;
@@ -203,6 +203,9 @@
       &__content:hover{
         transition-duration: .4s;
       }
+      &__img, &__title{
+        border-radius: 10px;
+      }
       &__img, &__fig{
         height: 200px;
         width: 257px;
@@ -304,6 +307,7 @@
       }
       &__img{
         object-fit: cover;
+        border-radius: 10px;
       }
       &__content{
         align-items: flex-end;
@@ -325,6 +329,7 @@
         position: relative;
       }
       &__fig::before{
+        border-radius: 10px;
         content: '';
         z-index: 10;
         width: 100%;
@@ -384,15 +389,13 @@
   &__avis{
     .avis{
       &__all{
-        overflow-x: auto;
-      }
-      &__all::-webkit-scrollbar{
-        display: none;
+        flex-wrap: wrap;
       }
       &__principaltitle{
         margin-bottom: em(22.23)
       }
       &__content{
+        margin-bottom: 1em;
         margin-right: em(20);
         flex-direction: column;
         justify-content: space-evenly;
@@ -406,21 +409,20 @@
       }
     }
   }
-  .slider {
-    width: 100%;
-    overflow: hidden;
-  }
-  .slider-container {
+  .partenaires__img, .index__logo, .partenaires__fig{
+    width: 150px;
     height: 100px;
-    display: flex;
-    width: 200%;
   }
-  .index__logo {
-    flex: 1 0 0;
+  .partenaires__img{
+    object-fit: cover;
+  }
+  .index__logo{
+    margin-right: 1em;
   }
 
+
   @media screen and (max-width: 990px){
-    &__services, .vendre, &__soutiens, .actualites, .hero__content, &__avis{
+    .slider, &__services, .vendre, &__soutiens, .actualites, .hero__content, &__avis{
       padding: 70px 30px 60px;
       max-width: 780px;
       margin: 0 auto;
