@@ -15,48 +15,50 @@
             </div>
         </section>
         <section class="clinicoeurs__services services">
-            <h3 aria-level="3" class="services__principaltitle title">Que <span class="bold rect rect_green">faisons-nous ?</span></h3>
+            <h3 aria-level="3" class="services__principaltitle title">Découvrez nos <span class="bold rect rect_green">différents services</span></h3>
             <div class="services__all flex">
                 <?php $services = new WP_Query([
                     'post_type' => 'service',
-                    'posts_per_page' => 100
+                    'posts_per_page' => 4
                 ]);
                 if($services->have_posts()): while($services->have_posts()): $services->the_post();?>
-                    <div class="services__content slide-in">
-                        <h4 aria-level="4" class="services__title bold"><?= get_the_title() ?></h4>
-                        <p class="services__text"><?= get_field('services_description') ?></p>
-                    </div>
+
+                    <a href="<?= get_the_permalink(); ?>" class="services__link">
+                        <div class="services__content">
+                            <h4 class="services__title bold"><?= get_the_title() ?></h4>
+                            <p class="services__text"><?= get_field('services_description') ?></p>
+                        </div>
+                        <div class="go-corner">
+                            <div class="go-arrow">
+                                →
+                            </div>
+                        </div>
+                    </a>
                 <?php endwhile; else: ?>
                     <p class="projects__empty">Il n'y a pas de services pour le moment. </p>
                 <?php endif; wp_reset_query(); ?>
             </div>
         </section>
-        <section class="clinicoeurs__equipe background-blue tri">
-            <div class="background">
-                <h3 aria-level="3" class="equipe__principaltitle title"> Notre équipe</h3>
-                <?php $types = get_terms(['taxonomy' => 'section']); ?>
-                <ul class="equipe__tax flex">
-                    <li class="equipe__nom">Tous</li>
-                    <?php foreach($types as $type):?>
-                        <li class="equipe__nom"><?=$type->name?></li>
-                    <?php endforeach;?>
-                </ul>
-                <div class="flex column slide-in">
-                    <div class="equipe__wrapper equipe__wrapper--all flex">
-                        <?php $equipe = new WP_Query([
-                            'post_type' => 'equipe',
-                            'posts_per_page' => 100
-                        ]);
-                        if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
-                            <?php $tax = get_the_terms( get_the_ID() , 'section' );?>
-                            <?php require ('parts/equipe.php');?>
-                        <?php endwhile; else: ?>
-                            <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
-                        <?php endif; wp_reset_query(); ?>
+        <div class="background-blue">
+            <section class="clinicoeurs__equipe">
+                <div class="background">
+                    <h3 aria-level="3" class="equipe__principaltitle title"> Notre équipe</h3>
+                    <div class="flex column slide-in">
+                        <div class="equipe__wrapper equipe__wrapper--all flex">
+                            <?php $equipe = new WP_Query([
+                                'post_type' => 'equipe',
+                                'posts_per_page' => 100
+                            ]);
+                            if($equipe->have_posts()): while($equipe->have_posts()): $equipe->the_post();?>
+                                <?php require ('parts/equipe.php');?>
+                            <?php endwhile; else: ?>
+                                <p class="projects__empty">Il n'y a personne dans l'équipe pour le moment. </p>
+                            <?php endif; wp_reset_query(); ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <section class="clinicoeurs__benevoles benevoles slide-in">
             <h3 aria-level="3" class="benevoles__principaltitle title">Nous recherchons des <span class="bold rect rect_blue">bénévoles !</span></h3>
             <div class="benevoles__all flex">
