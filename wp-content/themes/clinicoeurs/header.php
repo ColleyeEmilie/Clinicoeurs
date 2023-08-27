@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <meta name="description" content="Site pour les l'ASBL des clinicoeurs localisés à Vielsalm."/>
 
-    <title><?= get_the_title(); ?></title>
+    <title><?= get_the_title(); ?> - Clinicoeurs</title>
     <link rel="stylesheet" href="https://use.typekit.net/ekf1new.css">
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/css/site.css'; ?>" />
 </head>

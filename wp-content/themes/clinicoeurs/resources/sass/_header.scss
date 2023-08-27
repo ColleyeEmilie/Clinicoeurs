@@ -23,8 +23,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: inline-block;
-  top: 30px;
-  left: 100px;
+  top: 33px;
+  left: 70px;
   width: 70px;
   height: 70px;
 }
@@ -60,6 +60,7 @@
     clear: both;
     max-height: 0;
     &-icon{
+      margin-top: 30px;
       cursor: pointer;
       display: inline-block;
       float: right;
@@ -158,7 +159,7 @@
     width: 100%;
   }
   .logo{
-    display: none;
+    z-index: 10;
   }
   .header{
       color: $color_font;
