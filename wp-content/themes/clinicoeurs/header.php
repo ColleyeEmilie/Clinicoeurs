@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-    <meta name="description" content="Site pour les l'ASBL des clinicoeurs localisés à Vielsalm."/>
-
+    <meta name="description" content="Site pour les l'ASBL des clinicoeurs localisés à Vielsalm.">
     <title><?= get_the_title(); ?> - Clinicoeurs</title>
     <link rel="stylesheet" href="https://use.typekit.net/ekf1new.css">
-    <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/css/site.css'; ?>" />
+    <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/css/site.css'; ?>">
 </head>
 <body>
 <header class="header flex">
@@ -19,8 +18,7 @@
 
     <a href="<?= home_url(); ?>" class="logo"></a>
     <h2 aria-level="2" class="hidden">Navigation</h2>
-    <ul class="menu flex">
-        <div class="menu__content">
+    <ul class="menu flex menu__content">
             <?php foreach(clinicoeurs_get_menu('main') as $link): ?>
                 <li>
                     <a href="<?= $link->href; ?>" class="nav__link">
@@ -28,8 +26,7 @@
                     </a>
                 </li>
             <?php endforeach; ?>
-        </div>
-        <div class="languages">
+        <li class="languages">
             <ul class="languages__container">
                 <?php foreach(pll_the_languages(['raw'=>true]) as $lang):?>
                     <li class="languages__item <?= $lang['current_lang'] ? 'languages__link--current' : '' ?>">
@@ -37,7 +34,7 @@
                     </li>
                 <?php endforeach;?>
             </ul>
-        </div>
+        </li>
 
     </ul>
 </header>

@@ -194,6 +194,10 @@
       &__content{
         margin: 0 auto 3em;
         width: 200px;
+        li{
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }
