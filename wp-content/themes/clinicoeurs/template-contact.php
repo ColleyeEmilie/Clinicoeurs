@@ -25,19 +25,21 @@
                     <h3 id="contact" class="contact__title hidden" aria-level="3">Contactez-moi</h3>
                     <div class="page__form">
                         <?php
-                        $feedback = clinicoeurs_session_get('clinicoeurs_contact_form_feedback') ?? false;
-                        $errors = clinicoeurs_session_get('clinicoeurs_contact_form_errors') ?? [];
+                        $feedback = hepl_session_get('hepl_contact_form_feedback') ?? false;
+                        $errors = hepl_session_get('hepl_contact_form_errors') ?? [];
                         ?>
-                        <?php if($feedback): ?>
-                            <div class="success">
-                                <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
-                            </div>
-                        <?php endif; ?>
-                        <?php if($errors): ?>
-                            <div class="error">
-                                <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
-                            </div>
-                        <?php endif; ?>
+
+                        <?php if ($feedback): ?>
+                        <div class="success"">
+                        <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if ($errors): ?>
+                        <div class="error">
+                            <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
+                        </div>
+                    <?php endif; ?>
 
                             <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="POST" class="contact__form">
                                 <fieldset class="contact__info">
@@ -79,8 +81,8 @@
                                     </div>
                                 </fieldset>
                                 <div class="contact__footer">
-                                    <input type="hidden" name="action" value="clinicoeurs_contact_form" />
-                                    <input type="hidden" name="contact_nonce" value="<?= wp_create_nonce('clinicoeurs_contact_form'); ?>" />
+                                    <input type="hidden" name="action" value="hepl_contact_form"/>
+                                    <input type="hidden" name="contact_nonce" value="<?= wp_create_nonce('hepl_contact_form'); ?>" />
                                     <button class="contact__submit" type="submit">Envoyer</button>
                                 </div>
                             </form>

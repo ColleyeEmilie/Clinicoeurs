@@ -1,3 +1,15 @@
+.success{
+  padding-bottom: 2em;
+  color:green;
+}
+.error{
+  padding-bottom: 2em;
+  color:red;
+}
+.field__error{
+  color:red; padding-bottom: 1em;
+}
+
 .layout__contact {
   color: $color_font;
   padding-top: 100px;

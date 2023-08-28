@@ -190,14 +190,14 @@ function __clinicoeurs(string $translation, array $replacements = [])
 
 add_action('init', 'clinicoeurs_register_custom_post_types');
 
-function clinicoeurs_execute_contact_form()
+function hepl_execute_contact_form()
 {
     $config = [
         'nonce_field' => 'contact_nonce',
-        'nonce_identifier' => 'clinicoeurs_contact_form',
+        'nonce_identifier' => 'hepl_contact_form',
     ];
 
-    (new \Clinicoeurs\ContactForm($config, $_POST))
+    (new \Hepl\ContactForm($config, $_POST))
         ->sanitize([
             'firstname' => 'text_field',
             'lastname' => 'text_field',
@@ -220,30 +220,29 @@ function clinicoeurs_execute_contact_form()
         )
         ->feedback();
 }
-add_action('admin_post_nopriv_clinicoeurs_contact_form', 'clinicoeurs_execute_contact_form');
-add_action('admin_post_clinicoeurs_contact_form', 'clinicoeurs_execute_contact_form');
+
+add_action('admin_post_nopriv_hepl_contact_form', 'hepl_execute_contact_form');
+add_action('admin_post_hepl_contact_form', 'hepl_execute_contact_form');
 
 // Travailler avec la session de PHP
-function clinicoeurs_session_flash(string $key, mixed $value)
+function hepl_session_flash(string $key, mixed $value)
 {
-    if(! isset($_SESSION['clinicoeurs_flash'])) {
-        $_SESSION['clinicoeurs_flash'] = [];
+    if(! isset($_SESSION['hepl_flash'])) {
+        $_SESSION['hepl_flash'] = [];
     }
-
-    $_SESSION['clinicoeurs_flash'][$key] = $value;
+    $_SESSION['hepl_flash'][$key] = $value;
 }
 
-function clinicoeurs_session_get(string $key)
+function hepl_session_get(string $key)
 {
-    if(isset($_SESSION['clinicoeurs_flash']) && array_key_exists($key, $_SESSION['clinicoeurs_flash'])) {
+    if(isset($_SESSION['hepl_flash']) && array_key_exists($key, $_SESSION['hepl_flash'])) {
         // 1. Récupérer la donnée qui a été flash.
-        $value = $_SESSION['clinicoeurs_flash'][$key];
+        $value = $_SESSION['hepl_flash'][$key];
         // 2. Supprimer la donnée de la session.
-        unset($_SESSION['clinicoeurs_flash'][$key]);
+        unset($_SESSION['hepl_flash'][$key]);
         // 3. Retourner la donnée récupérée.
         return $value;
     }
-
     // La donnée n'existait pas dans la session flash, on retourne null.
     return null;
 }
