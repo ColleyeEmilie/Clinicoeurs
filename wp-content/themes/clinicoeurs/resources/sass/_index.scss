@@ -245,6 +245,12 @@
   }
   &__soutiens{
     .soutiens{
+      &__content:hover{
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.15)
+      }
+      &__content{
+        transition: ease-in-out 0.5s;
+      }
       &__more {
         margin-right: em(40);
       }
@@ -283,6 +289,19 @@
   }
   &__actualites{
     .actualites{
+      &__fig:hover .actualites__img{
+        transform: scale(1.1);
+      }
+      &__fig{
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      &__img:hover{
+        transform: scale(1.1);
+      }
+      &__img{
+        transition: ease-in-out 0.5s;
+      }
       &__more {
         margin-right: em(40);
       }
@@ -502,11 +521,6 @@
     }
     &__actualites{
       .actualites{
-        &__img:hover{
-          filter: brightness(0.6);
-          transition-duration: .4s;
-
-        }
         &__principaltitle{
           font-size: em(32);
         }

@@ -30,8 +30,7 @@
     </section>
 
      <section class="actualite__tri tri">
-        <h3 aria-level="3" class="tri__principaltitle title "> Rechercher un article par <span class="bold rect rect_yellow">catégorie </span></h3>
-        <?php $types = get_terms(['taxonomy' => 'type']); ?>
+        <h3 aria-level="3" class="tri__principaltitle title "> Toutes les <span class="bold rect rect_yellow">actualités</span></h3>
         <div class="tri__wrapper actu actu--all flex">
             <h4 aria-level="4" class="hidden">Toutes les actualites</h4>
             <?php $actualite = new WP_Query([

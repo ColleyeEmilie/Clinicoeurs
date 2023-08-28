@@ -76,7 +76,7 @@
         <div class="soutiens__regroup flex">
             <h3 aria-level="3" class="soutiens__principaltitle title">Envie de nous <span class=" bold rect_blue rect">soutenir ?</span></h3>
             <div class="soutiens__wrapper">
-                <a href="https://clinicoeurs.emilie-colleye.com/fr/uns-unterstutzen/"><p class="soutiens__more more">En voir plus</p><span class="bubble_blue"></span></a>
+                <a href="https://clinicoeurs.emilie-colleye.com/soutiens/"><p class="soutiens__more more">En voir plus</p><span class="bubble_blue"></span></a>
             </div>
         </div>
         <div class="soutiens__all flex">
@@ -85,12 +85,14 @@
                 'posts_per_page' => 4
             ]);
             if($soutien->have_posts()): while($soutien->have_posts()): $soutien->the_post();?>
-                <div class="soutiens__content flex">
-                    <figure class="soutiens__fig">
-                        <img src="<?= get_field('soutien_icon')?>" alt="" class="soutiens__icon">
-                    </figure>
-                    <h4 class="soutiens__title"><?= get_field('soutien_title') ?></h4>
-                </div>
+                <a href="https://clinicoeurs.emilie-colleye.com/soutiens/" class="soutiens__link">
+                    <div class="soutiens__content flex">
+                        <figure class="soutiens__fig">
+                            <img src="<?= get_field('soutien_icon')?>" alt="" class="soutiens__icon">
+                        </figure>
+                        <h4 class="soutiens__title"><?= get_field('soutien_title') ?></h4>
+                    </div>
+                </a>
             <?php endwhile; else: ?>
                 <p class="projects__empty">Il n'y a aucune façon de nous soutenir pour le moment. </p>
             <?php endif; wp_reset_query(); ?>
