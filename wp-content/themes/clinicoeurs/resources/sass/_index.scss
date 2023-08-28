@@ -181,6 +181,9 @@
   }
   &__vendre{
     .vendre {
+      &__link{
+        margin-right: 1.5em;
+      }
       &__content{
         position: relative;
         height: 200px;
