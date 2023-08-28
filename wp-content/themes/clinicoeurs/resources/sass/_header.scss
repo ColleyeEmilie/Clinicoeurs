@@ -200,5 +200,8 @@
   .header{
     position: fixed;
     z-index: 30;
+    .logo{
+      position: absolute;
+    }
   }
 }

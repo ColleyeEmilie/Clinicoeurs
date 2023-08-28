@@ -104,6 +104,19 @@
   }
   &__actualite{
       .tri{
+        &__fig:hover .tri__img{
+          transform: scale(1.1);
+        }
+        &__fig{
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        &__img:hover{
+          transform: scale(1.1);
+        }
+        &__img{
+          transition: ease-in-out 0.5s;
+        }
         &__link{
           margin-bottom: 1em;
         }
