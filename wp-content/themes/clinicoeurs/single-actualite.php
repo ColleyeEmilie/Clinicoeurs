@@ -21,8 +21,11 @@
         </section>
 
         <section class="singleActualite__like like">
-            <div class="like__regroup flex">
+            <div class="actualites__regroup flex">
                 <h3 aria-level="3" class="like__principaltitle title">Vous pourriez aussi <span class="bold rect rect_yellow">aimer</span></h3>
+                <div class="like__regroup flex">
+                    <a href="https://clinicoeurs.emilie-colleye.com/fr/actualites/"><p class="like__more more">En voir plus</p><span class="bubble_yellow"></span></a>
+                </div>
             </div>
             <div class="like__all flex">
                 <?php $actualite = new WP_Query([
