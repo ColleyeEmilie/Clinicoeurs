@@ -155,9 +155,9 @@
         align-self: center;
       }
       &__facebook:hover{
-        border: $color_violet solid 1px;
+        border: $color_blue solid 1px;
         background-color: white;
-        color: $color_violet;
+        color: $color_blue;
         transition-duration: .4s;
       }
       &__link{
@@ -166,10 +166,10 @@
       }
       &__facebook{
         text-align: center;
-        border: $color_violet solid 1px;
+        border: $color_blue solid 1px;
         display: inline-block;
         padding: 15px 25px;
-        background-color: $color_violet;
+        background-color: $color_blue;
         color: white;
         border-radius: 10px;
       }
