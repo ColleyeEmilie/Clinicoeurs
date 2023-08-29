@@ -657,6 +657,9 @@
     }
     &__vendre{
       .vendre {
+        &__link{
+          margin-bottom: 1em;
+        }
         &__principaltitle{
           margin-bottom: 0.6em;
           font-size: em(26);
@@ -798,6 +801,9 @@
     }
     &__soutiens{
       .soutiens{
+        &__link{
+          width: 100%;
+        }
         &__principaltitle{
           line-height: 1.3em;
         }

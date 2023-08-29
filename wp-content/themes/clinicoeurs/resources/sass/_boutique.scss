@@ -58,6 +58,7 @@
     .vendre {
       &__link{
         margin-right: 1.5em;
+        margin-bottom: 1em;
       }
 
       &__content{
@@ -116,6 +117,9 @@
       }
       &__more {
         margin-right: em(40);
+      }
+      &__produits{
+        flex-wrap: wrap;
       }
     }
   }
@@ -342,6 +346,9 @@
       .boutique{
         &__content{
           flex-direction: column;
+        }
+        &__fig{
+          margin-bottom: 2em;
         }
         &__fig, &__img{
           max-width: 400px;
