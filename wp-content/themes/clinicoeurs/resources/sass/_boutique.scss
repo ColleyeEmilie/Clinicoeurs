@@ -138,14 +138,40 @@
         margin-right: em(40);
       }
       &__text{
+        margin-bottom: 1em;
         max-width: 400px;
         min-width: 200px;
+      }
+      &__text2{
+        margin-bottom: 1.5em;
       }
       &__content{
         justify-content: space-between;
       }
-      &__p{
+      &__p
+      {
+        display: flex;
+        flex-direction: column;
         align-self: center;
+      }
+      &__facebook:hover{
+        border: $color_violet solid 1px;
+        background-color: white;
+        color: $color_violet;
+        transition-duration: .4s;
+      }
+      &__link{
+        align-self: center;
+        color: white;
+        padding: 0.625em;
+      }
+      &__facebook{
+        border: $color_violet solid 1px;
+        display: inline-block;
+        padding: 15px 25px;
+        background-color: $color_violet;
+        color: white;
+        border-radius: 10px;
       }
     }
   }
@@ -174,6 +200,7 @@
       &__wrapper{
         height: 50px;
         width: 200px;
+        border: $color_yellow solid 1px;
         border-radius: 15px;
         background-color: $color_yellow;
         justify-content: center;

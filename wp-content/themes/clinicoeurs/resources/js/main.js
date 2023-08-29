@@ -1,3 +1,5 @@
+
+
 class Clinicoeurs_Controller {
     constructor() {
         this.body = document.body
@@ -10,7 +12,6 @@ class Clinicoeurs_Controller {
             rootMargin: '0px',
             threshold: 0.5,
         }
-
         let aTargets = document.querySelectorAll('.slide-in');
         let observer = new IntersectionObserver(callback, options);
         for (const target of aTargets) {
@@ -18,7 +19,6 @@ class Clinicoeurs_Controller {
             target.addEventListener('load', (event) => {
             })
         }
-
         function callback(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -26,6 +26,7 @@ class Clinicoeurs_Controller {
                 }
             });
         }
+
     }
 }
 

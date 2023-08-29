@@ -55,7 +55,10 @@
             </figure>
             <div class="boutique__p flex">
                 <p class="boutique__text"><?= get_field('product_boutique')?></p>
-                <a href="<?= get_field('product_link')?>"><?= get_field('product_fb')?></a>
+                <p class="boutique__text2"><?= get_field('product_fb')?></p>
+                <div class="boutique__facebook">
+                    <a href="<?= get_field('product_link')?>" class="boutique__link">Notre page Facebook</a>
+                </div>
             </div>
         </div>
     </section>

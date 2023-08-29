@@ -29,12 +29,14 @@
       &__fonction{
         font-size: em(24);
         font-family: "p22-mackinac-pro", serif;
-        text-align: center;
       }
     }
   }
   &__hero{
     .hero{
+      &__content{
+        margin: auto;
+      }
       &__all{
         padding-top: 50px;
       }
@@ -141,6 +143,7 @@
       &__wrapper{
         height: 50px;
         width: 200px;
+        border: $color_yellow solid 1px;
         border-radius: 10px;
         background-color: $color_yellow;
         justify-content: center;
@@ -201,7 +204,6 @@
         &__fonction{
           font-size: em(24);
           font-family: "p22-mackinac-pro", serif;
-          text-align: center;
         }
       }
     }
