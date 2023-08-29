@@ -162,10 +162,10 @@
       }
       &__link{
         align-self: center;
-        color: white;
         padding: 0.625em;
       }
       &__facebook{
+        text-align: center;
         border: $color_violet solid 1px;
         display: inline-block;
         padding: 15px 25px;
