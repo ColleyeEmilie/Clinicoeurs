@@ -91,11 +91,12 @@
             </div>
         </div>
         <div class="contact__boutique boutique flex">
+            <div class="boutique__bubble"></div>
             <h3 class="asbl__title title" aria-level="3">Notre boutique</h3>
             <div class="boutique__content">
                 <div class="boutique__map">
                     <figure class="boutique__fig">
-                        <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'boutique__img']); ?>
+                        <iframe  class="boutique__img" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8712.004354331506!2d5.911246374170045!3d50.28204048166401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c06e00630e4e9f%3A0x16a7d26408d234c!2sPl.%20de%20Salm%202%2C%206690%20Vielsalm!5e0!3m2!1sfr!2sbe!4v1693323711128!5m2!1sfr!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </figure>
                 </div>
                 <div class="coordinates__infos">

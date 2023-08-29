@@ -52,7 +52,7 @@
             margin-bottom: 4em;
             z-index: 10;
             flex-direction: row-reverse;
-            justify-content: space-around;
+            justify-content: space-between;
           }
         }
       }
@@ -157,10 +157,23 @@
 
     .boutique {
       flex-direction: column;
+      overflow: hidden;
 
+      &__bubble{
+        opacity: 0.9;
+        z-index: -1;
+        right: 4%;
+        display: inline-block;
+        background-color: $color_green;
+        content: "";
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        position: absolute;
+      }
       &__content {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
       }
 
       &__fig, &__img {
@@ -213,6 +226,13 @@
       }
 
       .boutique {
+        &__bubble{
+          top: 237%;
+          right: 9.5%;
+        }
+        &__fig{
+          margin: 0 auto;
+        }
         &__map {
           margin-bottom: 2em;
         }

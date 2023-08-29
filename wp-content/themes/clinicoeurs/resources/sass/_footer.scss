@@ -1,5 +1,8 @@
 .footer{
   &__links{
+    a:hover{
+      font-weight: bolder;
+    }
     .nav{
       &__info{
         p{
@@ -12,9 +15,6 @@
         }
       }
     }
-  }
-  a:hover{
-    font-weight: bolder;
   }
   h3{
     font-size: em(18);
