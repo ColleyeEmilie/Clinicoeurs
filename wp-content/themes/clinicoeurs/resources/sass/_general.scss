@@ -205,3 +205,15 @@ a{
   opacity: 1;
   transform: translateX(0%) scale(1);
 }
+
+@keyframes floating{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-15px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
