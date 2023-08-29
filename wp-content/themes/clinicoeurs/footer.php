@@ -3,7 +3,7 @@
     <div class=".footer__content">
         <div class="footer__help flex">
             <p class="footer__accroche title">Tout le monde peut aider</p>
-            <a class="footer__contact" href="www.clinicoeurs.emilie-colleye.com/contact" >Découvrez comment</a>
+            <a class="footer__contact" href="https://clinicoeurs.emilie-colleye.com/soutiens/" >Découvrez comment</a>
         </div>
         <div class="footer__links flex">
             <nav class="nav__navigation navigation">
