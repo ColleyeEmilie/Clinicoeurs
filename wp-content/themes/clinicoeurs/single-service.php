@@ -57,31 +57,6 @@
             </div>
         </div>
     </section>
-    <section class="service__actualite slide-in tri">
-        <h3 aria-level="3" class="tri__principaltitle title "> Articles liés à ce <span class="bold rect rect_yellow">service</span></h3>
-        <div class="tri__wrapper actu actu--all flex">
-            <h4 aria-level="4" class="hidden">Toutes les actualites</h4>
-            <?php $actualite = new WP_Query([
-                'post_type' => 'actualite',
-                'posts_per_page' => 100
-            ]);
-            if($actualite->have_posts()): while($actualite->have_posts()): $actualite->the_post();?>
-                <?php $tax = get_the_terms( get_the_ID() , 'type' );?>
-                <?php if($tax[0]->slug === strtolower($title)):?>
-                    <a href="<?= get_the_permalink();?>" class="tri__link">
-                        <article class="tri__content content flex">
-                            <h5 aria-level="5" class="tri__title"><?= get_the_title()?></h5>
-                            <figure class="tri__fig">
-                                <?= get_the_post_thumbnail(null, 'latest_thumbnail', ['class' => 'tri__img']); ?>
-                            </figure>
-                        </article>
-                    </a>
-                <?php endif; ?>
-            <?php endwhile; else: ?>
-                <p class="actualite__empty">Il n'y a aucune actualité pour le moment.  </p>
-            <?php endif; wp_reset_query(); ?>
-        </div>
-    </section>
 </main>
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>
